@@ -180,9 +180,7 @@
 							-->
 <!-- e:simpan -->			
 						<center>
-			<?php
-		}
-			?>			
+			<?php } ?>			
 						<div class="aksi" style="border-top:1px solid #ccc; margin-bottom:20px; ">
 						<br>
 						<button type="submit" class="btn btn-app btn-primary btn-xs radius-4">

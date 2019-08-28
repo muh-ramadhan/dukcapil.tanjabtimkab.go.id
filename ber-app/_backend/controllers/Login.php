@@ -65,13 +65,13 @@ function index()
 			{
 				foreach($akses->result_array() as $data)
 				{
-					$session['id_user'] = $data['username'];
-					$session['nama'] = $data['nama_lengkap'];
-					$session['level'] = $data['level'];
-					$session['session_id'] = $data['id_session'];
-					$session['filemanager'] = true;
+					$_SESSION['id_user'] = $data['username'];
+					$_SESSION['nama'] = $data['nama_lengkap'];
+					$_SESSION['level'] = $data['level'];
+					$_SESSION['session_id'] = $data['id_session'];
+					$_SESSION['filemanager'] = true;
 			
-					$this->session->set_userdata($session);
+					$this->session->set_userdata($_SESSION);
 					redirect('dashboard', 'refresh');
 				}
 			}
