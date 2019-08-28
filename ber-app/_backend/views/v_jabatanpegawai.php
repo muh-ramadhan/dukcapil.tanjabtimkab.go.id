@@ -36,7 +36,7 @@ if ($this->uri->segment(2,0)==null or $this->uri->segment(2,0)=="index") {
 						<br>
 						
 	<?php
-    if (is_countable($artikel)) { 
+    if (count($artikel)) { 
 	?> 
 	 <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
