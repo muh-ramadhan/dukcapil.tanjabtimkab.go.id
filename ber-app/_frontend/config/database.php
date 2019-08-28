@@ -5,12 +5,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'mysql:host=localhost;dbname=dukcapil',
+	'dsn'	=> 'mysql:host=localhost;dbname=dukcapil.tanjabtimkab.go.id',
 	//'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '',
-	'database' => 'dukcapil',
+	'password' => 'toor',
+	'database' => 'dukcapil.tanjabtimkab.go.id',
 	//'dbdriver' => 'mysqli',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
@@ -18,8 +18,8 @@ $db['default'] = array(
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
 	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
+	'char_set' => 'utf8mb4',
+	'dbcollat' => 'utf8mb4_unicode_ci',
 	'swap_pre' => '',
 	'encrypt' => FALSE,
 	'compress' => FALSE,
