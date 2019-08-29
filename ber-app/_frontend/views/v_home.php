@@ -578,40 +578,43 @@ $(document).on({
             <div class="blog-shortcode blog-grid">
                 <div class="container">
                     <div class="row">
+                    <?php
+						$no=1;
+						$beritaterbaru = $this->M_data->beritaterbaru2(0,3);
+						foreach($beritaterbaru->result() as $row){
+							$isi=strip_tags($row->isi_berita);
+							$isi=substr($isi,0,180); 
+							$judul=seo_link($row->judul);
+							$judulan=seo_link($row->nama_kategori);
+							$photopath = str_replace('-', '/', $row->tanggal_modif);
+							$a=substr($row->tanggal, 0,4);
+							$b=substr($row->tanggal, 5,2);
+							$c=substr($row->tanggal, 8,9);
+							$tanggal=$c.'/'.$b.'/'.$a;
+							if  ($row->gambar!='') { 
+								$gambar=base_url() ."foto_berita/".$photopath."/".$row->gambar;
+							}
+							else { 
+								$gambar=base_url() ."foto_berita/image-default.jpg";
+							}
+
+							?>
                         <div class="col-md-6">
                             <article class="hentry">
                                 <div class="entry-cover">
-                                    <a href="blog-single.html">
-                                        <img src="images/blog/5.jpg" alt="images">
+                                    <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita."/".$judul;?>"><?php echo $row->judul; ?>">
+                                        <img src="<img src="<?php echo $gambar; ?>" alt="images">
                                     </a>
                                 </div>
                                 <div class="entry-header">
                                     <h2 class="entry-title">
-                                        <a href="blog-single.html">3 Reasons Your Business Needs A Budget Now</a>
+                                        <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita."/".$judul;?>"><?php echo $row->judul; ?>">3 Reasons Your Business Needs A Budget Now</a>
                                     </h2>
                                     <div class="post-meta">
-                                        <div class="entry-time">January 26, 2016</div>
+                                        <div class="entry-time"><?php echo $row->hari; ?>, <?php echo tgl_indo($row->tanggal); ?></div>
                                     </div>
                                 </div>
-                                <div class="entry-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has...</div>
-                            </article><!-- /.hentry -->
-                        </div><!-- /.col-md-6 -->
-                        <div class="col-md-6">
-                            <article class="hentry">
-                                <div class="entry-cover">
-                                    <a href="blog-single.html">
-                                        <img src="images/blog/6.jpg" alt="images">
-                                    </a>
-                                </div>
-                                <div class="entry-header">
-                                    <h2 class="entry-title">
-                                        <a href="blog-single.html">2016 Queensland Small Business Week</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <div class="entry-time">January 26, 2016</div>
-                                    </div>
-                                </div>
-                                <div class="entry-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has...</div>
+                                <div class="entry-content"><?php echo $isi; ?></div>
                             </article><!-- /.hentry -->
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
@@ -619,6 +622,7 @@ $(document).on({
                     <div class="flat-divider d40px"></div>
 
                     <div class="row">
+
                         <div class="col-md-6">
                             <article class="hentry">
                                 <div class="entry-cover">
@@ -637,24 +641,9 @@ $(document).on({
                                 <div class="entry-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has...</div>
                             </article><!-- /.hentry -->
                         </div><!-- /.col-md-6 -->
-                        <div class="col-md-6">
-                            <article class="hentry">
-                                <div class="entry-cover">
-                                    <a href="blog-single.html">
-                                        <img src="images/blog/8.jpg" alt="images">
-                                    </a>
-                                </div>
-                                <div class="entry-header">
-                                    <h2 class="entry-title">
-                                        <a href="blog-single.html">The fastest way to grow your business</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <div class="entry-time">January 26, 2016</div>
-                                    </div>
-                                </div>
-                                <div class="entry-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has...</div>
-                            </article><!-- /.hentry -->
-                        </div><!-- /.col-md-6 -->
+                        <?php 
+						$no=$no+1;
+					} ?>   
                     </div><!-- /.row -->
                 </div><!-- /.container -->
             </div><!-- /.blog-shortcodes -->
@@ -785,90 +774,97 @@ $(document).on({
                             </div><!-- /.widget_text -->
                         </div><!-- /.col-md-3 -->
 
-                        <div class="col-md-3">
-                            <div class="widget widget_recent_entries">
-                                <h3 class="widget-title"><span class="style_1">R</span>ecent News</h3>
-                                <ul>
-                                    <li>
-                                        <a href="blog-single.html">3 Reasons Your Business Needs A Budget Now</a>
-                                        <span class="post-date">January 26, 2016</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">2016 Queensland Small Business Week</a>
-                                        <span class="post-date">January 26, 2016</span>
-                                    </li>
-                                    <li>
-                                        <a href="blog-single.html">The Tax Office doesn’t always get it right</a>
-                                        <span class="post-date">January 26, 2016</span>
-                                    </li>
-                                </ul>
-                            </div><!-- /.widget .widget_recent_entries -->
-                        </div><!-- /.col-md-3 -->
+                        <div class="col-md-3"> 
+						<div class="widget widget_recent_entries">
+							<h3 class="widget-title"><span class="style_1">P</span>engumuman</h3>
+							<ul>
+								<?php
+								$pengumuman=$this->M_data->pengumuman(4);	
+								foreach($pengumuman->result() as $row){
+									$judul=seo_link($row->judul);
+									$tahunp=substr($row->tanggal_pengumuman, 0,4);
+									$bulanp=substr($row->tanggal_pengumuman, 5,2);
+									$tanggalp=substr($row->tanggal_pengumuman, 8,10);
+									$photopath = str_replace('-', '/', $row->tanggal_pengumuman);
+									?>
+									<li>
+										<a href="<?php echo base_url(); ?>pengumuman/detail/<?php echo $row->id_pengumuman."/".$judul;?>"><?php echo $row->judul; ?></a>
+										<span class="post-date"><?php echo $tanggalp; ?>/<?php echo $bulanp; ?>/<?php echo $tahunp; ?> - <?php echo $row->jam; ?> WIB</span>
+									</li>
+
+								<?php } ?> 
+							</ul>
+						</div><!-- /.widget .widget_recent_entries -->
+
+					</div><!-- /.col-md-3 -->
+
+                    <div class="col-md-3">
+						<div class="widget widget_recent_entries">
+							<h3 class="widget-title"><span class="style_1">A</span>genda Kegiatan</h3>
+							<ul>
+								<?php
+								$tampilkegiatan=$this->M_data->tampil_kegiatan(4);	
+								foreach($tampilkegiatan->result() as $row){
+									$a=substr($row->tanggal, 0,4);
+									$b=substr($row->tanggal, 5,2);
+									$c=substr($row->tanggal, 8,9);
+									$tanggal=$c.'/'.$b.'/'.$a;  
+									?>
+									<li>
+										<a href="<?php echo base_url(); ?>kegiatan/detail/<?php echo $row->id_kegiatan."/".$judul;?>"><?php echo $row->namakegiatan; ?></a>
+										<span class="post-date"><?php echo tgl_indo($row->tgl_kegiatan); ?></span>
+									</li>
+								<?php } ?>
+							</ul>
+						</div><!-- /.widget .widget_recent_entries -->
+					</div><!-- /.col-md-3 -->
 
                         <div class="col-md-3">
-                            <div class="widget widget_text information style_1">
-                                <h3 class="widget-title"><span class="style_1">C</span>ontact Us</h3>
-                                <div class="textwidget">
-                                    <p><strong>Headquarters:</strong><br>66 Nicholson Street Buffalo New York US 14214</p>
-                                    <p>
-                                        <i class="fa fa-phone ft-widget-margin-right-12"></i> 001-123-456-7890<br>
-                                        <i class="fa fa-envelope-o ft-widget-margin-right-10"></i> support@linethemes.com
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-phone ft-widget-margin-right-12"></i> 001-123-456-7890<br>
-                                        <i class="fa fa-envelope-o ft-widget-margin-right-10"></i> manager@linethemes.com
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-calendar ft-widget-margin-right-12"></i> Mon - Sat: 8:00 Am - 18:00 Pm<br>
-                                        <span class="ft-widget-margin-left-28">Sunday: Closed</span>
-                                    </p>
-                                </div>          
-                            </div><!-- /.widget .widget_text information -->
-                        </div><!-- /.col-md-3 -->
+						<div class="widget widget_text information style_1">
+							<h3 class="widget-title"><span class="style_1">H</span>ubungi Kami</h3>
+							<div class="textwidget">
+								<?php 
+								$identitas = $this->M_data->identitasfooter();
+								foreach($identitas->result() as $row) {
+									?>
+									<p><strong>Alamat :</strong><br><?php echo $row->alamat; ?></p>
+									<p>
+										<i class="fa fa-phone ft-widget-margin-right-12"></i> <?php echo $row->no_telp; ?><br>
+										<i class="fa fa-envelope-o ft-widget-margin-right-10"></i> <?php echo $row->email; ?>
+									</p>
+									<div class="social-links">
+										<a href="#"><i class="fa fa-twitter"></i></a>
+										<a href="#"><i class="fa fa-facebook"></i></a>
+										<a href="#"><i class="fa fa-behance"></i></a>
+										<a href="#"><i class="fa fa-spotify"></i></a>
+										<a href="#"><i class="fa fa-rss"></i></a>
+									</div>
+								<?php } ?>	 
+							</div>          
+						</div><!-- /.widget .widget_text information -->
+					</div><!-- /.col-md-3 -->
 
-                        <div class="col-md-3">
-                            <div class="widget widget_text style_1">
-                                <h3 class="widget-title"><span class="style_1">G</span>et in Touch</h3>
-                                <div class="textwidget">
-                                    <form id="contactform" method="post" action="./contact/contact-process.php">
-                                        <p><input id="name" name="name" type="text" value="" placeholder="Name" required="required"></p>
 
-                                        <p><input id="email" name="email" type="email" value="" placeholder="Email" required="required"></p>
-
-                                        <p><textarea name="message" placeholder="Comment" required="required"></textarea></p>
-                                        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit rounded" value="Send Mail">
-                                        </p>
-                                    </form>
-                                </div><!-- /.textwidget -->          
-                            </div><!-- /.widget .widget_text -->
-                        </div><!-- /.col-md-3 -->
                     </div><!-- /.row -->
                 </div><!-- /.container -->
             </div><!-- /.footer-content -->
 
             <div class="footer-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="flat-wrapper">
-                            <div class="ft-wrap clearfix">
-                                <div class="social-links">
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-behance"></i></a>
-                                    <a href="#"><i class="fa fa-spotify"></i></a>
-                                    <a href="#"><i class="fa fa-rss"></i></a>
-                                </div>
-                                <div class="copyright">
-                                    <div class="copyright-content">
-                                        Copyright © 2016 Fusion Theme by <a href="http://corpthemes.com/" target="_blank">Corpthemes</a>
-                                    </div>
-                                </div>
-                            </div><!-- /.ft-wrap -->
-                        </div><!-- /.flat-wrapper -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </div><!-- /.footer-content -->
-        </footer>
+			<div class="container">
+				<div class="row">
+					<div class="flat-wrapper">
+						<div class="ft-wrap clearfix">
+							<div class="copyright">
+								<div class="copyright-content">
+									Copyright © 2019 <a href="http://#/" target="_blank"> Dinas Komunikasi dan Informatika Tanjung Jabung Timur</a>
+								</div>
+							</div>
+						</div><!-- /.ft-wrap -->
+					</div><!-- /.flat-wrapper -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</div><!-- /.footer-content -->
+	</footer>
 
         <!-- Go Top -->
         <a class="go-top">            

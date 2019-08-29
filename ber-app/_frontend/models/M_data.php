@@ -967,6 +967,14 @@ define("TIME_ZONE","+07:00");
 			$wartosc = $row->namakegiatan;
 			return $wartosc; 
 		}
+
+		public function tampil_kegiatan ($limit)
+		{
+			$sql="select * from kegiatan where aktif='Y' order by id_kegiatan desc limit $limit";
+			$hslquery=$this->db->query($sql);
+			return $hslquery;
+		}
+		
 		/*-------------------- AKHIR MODUL JADWAL KEGIATAN ----------------*/ 
 		
 		/*-------------------- AWAL MODUL VIDEO -----------------*/
