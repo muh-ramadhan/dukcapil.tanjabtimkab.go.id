@@ -580,7 +580,7 @@ $(document).on({
                     <div class="row">
                     <?php
 						$no=1;
-						$beritaterbaru = $this->M_data->beritaterbaru2(0,3);
+						$beritaterbaru = $this->M_data->beritaterbaru2(0,4);
 						foreach($beritaterbaru->result() as $row){
 							$isi=strip_tags($row->isi_berita);
 							$isi=substr($isi,0,180); 
@@ -617,33 +617,14 @@ $(document).on({
                                 <div class="entry-content"><?php echo $isi; ?></div>
                             </article><!-- /.hentry -->
                         </div><!-- /.col-md-6 -->
+
+                        <?php 
+						$no=$no+1;
+					} ?>   
                     </div><!-- /.row -->
 
                     <div class="flat-divider d40px"></div>
 
-                    <div class="row">
-
-                        <div class="col-md-6">
-                            <article class="hentry">
-                                <div class="entry-cover">
-                                    <a href="blog-single.html">
-                                        <img src="images/blog/7.jpg" alt="images">
-                                    </a>
-                                </div>
-                                <div class="entry-header">
-                                    <h2 class="entry-title">
-                                        <a href="blog-single.html">The Tax Office doesn’t always get it right</a>
-                                    </h2>
-                                    <div class="post-meta">
-                                        <div class="entry-time">January 26, 2016</div>
-                                    </div>
-                                </div>
-                                <div class="entry-content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has...</div>
-                            </article><!-- /.hentry -->
-                        </div><!-- /.col-md-6 -->
-                        <?php 
-						$no=$no+1;
-					} ?>   
                     </div><!-- /.row -->
                 </div><!-- /.container -->
             </div><!-- /.blog-shortcodes -->
