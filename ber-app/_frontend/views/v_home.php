@@ -315,19 +315,24 @@ $(document).on({
             <div class="flat-portfolio portfolio-masonry margin20px">
                 <div class="portfolio"> 
                     <div class="portfolio-item item-four-column management">
+
                         <div class="portfolio-wrap">
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html"><img src="images/portfolio/1.jpg" alt="images"></a>
+                                <a href="portfolio-single-type-list.html">
+                                <img src="images/portfolio/1.jpg" alt="images">
+                                </a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                        <a href="portfolio-single-type-list.html">
+                                        <span>Quick View</span></a>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Identity Card Holder</a>
+                                        <a href="portfolio-single-type-list.html">1</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Management</a></li>
@@ -335,45 +340,55 @@ $(document).on({
                                 </div>
                             </div>
                         </div>
+
                     </div><!-- /.portfolio-item -->
+
 
                     <div class="portfolio-item item-four-column business">
                         <div class="portfolio-wrap">
+
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html"><img src="images/portfolio/2.jpg" alt="images"></a>
+                                <a href="portfolio-single-type-list.html">
+                                <img src="images/portfolio/2.jpg" alt="images">
+                                </a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                        <a href="portfolio-single-type-list.html">
+                                        <span>Quick View</span></a>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Business Cards Mockup</a>
+                                        <a href="portfolio-single-type-list.html">7</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Business</a></li>
                                     </ul>
                                 </div>
                             </div>
+                            
                         </div>
                     </div><!-- /.portfolio-item -->
 
                     <div class="portfolio-item item-four-column economy">
                         <div class="portfolio-wrap">
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html"><img src="images/portfolio/3.jpg" alt="images"></a>
+                                <a href="portfolio-single-type-list.html">
+                                <img src="images/portfolio/3.jpg" alt="images"></a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                        <a href="portfolio-single-type-list.html">
+                                        <span>Quick View</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Black Wine Bottle</a>
+                                        <a href="portfolio-single-type-list.html">3</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Economy</a></li>
@@ -386,17 +401,19 @@ $(document).on({
                     <div class="portfolio-item item-four-column business">
                         <div class="portfolio-wrap">
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html"><img src="images/portfolio/4.jpg" alt="images"></a>
+                                <a href="portfolio-single-type-list.html">
+                                <img src="images/portfolio/4.jpg" alt="images"></a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                        <a href="portfolio-single-type-list.html">
+                                        <span>Quick View</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Coffee &amp; Tea Exchange</a>
+                                        <a href="portfolio-single-type-list.html">4 <a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Business</a></li>
@@ -409,17 +426,19 @@ $(document).on({
                     <div class="portfolio-item item-four-column management">
                         <div class="portfolio-wrap">
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html"><img src="images/portfolio/6.jpg" alt="images"></a>
+                                <a href="portfolio-single-type-list.html">
+                                <img src="images/portfolio/6.jpg" alt="images"></a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                        <a href="portfolio-single-type-list.html">
+                                        <span>Quick View</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">P H . D Card Mocup</a>
+                                        <a href="portfolio-single-type-list.html">5</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Management</a></li>
@@ -442,7 +461,7 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Rambler &amp; Co</a>
+                                        <a href="portfolio-single-type-list.html">6</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Economy</a></li>
@@ -465,7 +484,7 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Oskar Kullander<br>Booklet</a>
+                                        <a href="portfolio-single-type-list.html">2</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Invoicing</a></li>
@@ -488,7 +507,7 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Rubber Stamp MockUp</a>
+                                        <a href="portfolio-single-type-list.html">8</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Business</a></li>
