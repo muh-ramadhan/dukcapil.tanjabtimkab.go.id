@@ -314,16 +314,28 @@ $(document).on({
             <div class="flat-divider d32px"></div>
             <div class="flat-portfolio portfolio-masonry margin20px">
                 <div class="portfolio"> 
+                
                     <div class="portfolio-item item-four-column management">
-
+                    <?php 
+				$fotokolom=$this->M_data->fotokolom(1,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
                         <div class="portfolio-wrap">
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
-                                <img src="images/portfolio/1.jpg" alt="images">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images">
                                 </a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                         <span>Quick View</span></a>
                                     </div>
                                 </div>
@@ -332,15 +344,15 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">1</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Management</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-
+                <?php } ?>
                     </div><!-- /.portfolio-item -->
 
 
@@ -362,7 +374,7 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">7</a>
+                                        <a href="portfolio-single-type-list.html">2</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Business</a></li>
@@ -413,7 +425,7 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">4 <a>
+                                        <a href="portfolio-single-type-list.html">4<a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Business</a></li>
@@ -484,7 +496,7 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">2</a>
+                                        <a href="portfolio-single-type-list.html">7</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Invoicing</a></li>
