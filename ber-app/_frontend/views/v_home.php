@@ -317,7 +317,7 @@ $(document).on({
                 
                     <div class="portfolio-item item-four-column management">
                     <?php 
-				$fotokolom=$this->M_data->fotokolom(1,1);
+				$fotokolom=$this->M_data->fotokolom(0,1);
 				foreach($fotokolom->result() as $row){ 
 					$isi=strip_tags($row->keterangan);
 					$isi=substr($isi,0,140); 
