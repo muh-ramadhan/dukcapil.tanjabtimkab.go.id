@@ -2,10 +2,8 @@
     <div class="flat-top">
         <div class="container">
             <div class="row">
-                <?php
-                $identitas = $this->M_data->identitasfooter();
-                foreach ($identitas->result() as $row) {
-                    ?>
+                <?php $identitas = $this->M_data->identitasfooter();
+                foreach ($identitas->result() as $row) { ?>
                     <div class="flat-wrapper">
                         <div class="custom-info">
                             <span>Sampaikan Pertanyaan Anda</span>
@@ -53,22 +51,55 @@
 
                         <div class="nav-wrap">
                             <nav id="mainnav" class="mainnav">
-                                <ul class="menu">
-                                    <li><a href="#">Portfolio</a>
-                                        <ul class="submenu">
-                                            <li><a href="portfolio-grid-classic-03-columns.html">Grid Classic Layouts</a>
+                                <?php $menu = $this->M_data->ambilmenu(2);
+                                $no = 1;
+                                foreach ($menu->result() as $row) { ?>
+                                    <?php $submenu = $this->M_data->ambilsubmenu('', $row->id_menu);
+                                        $jumlah = $submenu->num_rows();
+                                        ?>
+                                    <ul class="menu">
+                                        <li>
+                                            <a href="<?php echo base_url();
+                                                            echo $row->link; ?>"><?php echo $row->nama_menu; ?></a>
+                                            <?php if ($jumlah >= 1) { ?>
                                                 <ul class="submenu">
-                                                    <li><a href="portfolio-grid-classic-02-columns.html">Grid Classic 02 Columns</a></li>
-                                                    <li><a href="portfolio-grid-classic-03-columns.html">Grid Classic 03 Columns</a></li>
-                                                    <li><a href="portfolio-grid-classic-04-columns.html">Grid Classic 04 Columns</a></li>
-                                                    <li><a href="portfolio-grid-classic-05-columns.html">Grid Classic 05 Columns</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul><!-- /.submenu -->
-                                    </li>
-                                </ul><!-- /.menu -->
+                                                    <?php foreach ($submenu->result() as $sub) {
+                                                                $lin1 = substr($sub->link_submenu, 0, 3);
+                                                                if ($lin1 != "htt") {
+                                                                    $link1 = base_url() . $sub->link_submenu;
+                                                                } else {
+                                                                    $link1 = $sub->link_submenu;
+                                                                }
+                                                                $subsubmenu = $this->M_data->ambilsubsubmenu('', $sub->id_submenu);
+                                                                $jumlahh = $subsubmenu->num_rows(); ?>
+                                                        <li>
+                                                            <a href="<?php echo $link1; ?>"><?php echo $sub->nama_submenu; ?></a>
+                                                            <?php if ($jumlahh >= 1) { ?>
+                                                                <ul class="submenu">
+                                                                    <?php foreach ($subsubmenu->result() as $sub2) {
+                                                                                        $lin2 = substr($sub2->link_subsubmenu, 0, 3);
+                                                                                        if ($lin2 != "htt") {
+                                                                                            $link2 = base_url() . $sub2->link_subsubmenu;
+                                                                                        } else {
+                                                                                            $link2 = $sub->link_submenu;
+                                                                                        }
+                                                                                        ?>
+                                                                        <li><a href="<?php echo $link2; ?>"><?php echo $sub2->nama_subsubmenu; ?></a></li>
+                                                                    <?php } ?>
+                                                                </ul>
+                                                            <?php } ?>
+                                                        </li>
+                                                    <?php } ?>
+                                                </ul><!-- /.submenu -->
+                                            <?php } ?>
+                                        </li>
+                                    </ul><!-- /.menu -->
+                                <?php $no++;
+                                } ?>
                             </nav><!-- /.mainnav -->
                         </div><!-- /.nav-wrap -->
+
+
                     </div><!-- /.flat-wrapper -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
