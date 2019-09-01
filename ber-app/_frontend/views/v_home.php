@@ -303,6 +303,7 @@
             </div><!-- /.container -->
             <div class="flat-divider d32px"></div>
             <div class="flat-portfolio portfolio-masonry margin20px">
+                <!-- MULAI MODUL GALERI -->
                 <div class="portfolio">
                     <div class="portfolio-item item-four-column management">
                         <div class="portfolio-wrap">
@@ -602,6 +603,7 @@
 
 
                 </div><!-- /.portfolio -->
+                <!-- SELESAI MODUL GALERI -->
             </div><!-- /.flat-portfolio -->
         </div><!-- /.flat-row -->
 
@@ -678,6 +680,7 @@
 
         <!-- Blgo shortcode -->
         <div class="flat-row pad-top100px pad-bottom100px">
+            <!-- MULAI TAMPIL 4 BERITA -->
             <div class="blog-shortcode blog-grid">
                 <div class="container">
                     <div class="row">
@@ -729,6 +732,7 @@
 
                 </div><!-- /.row -->
             </div><!-- /.container -->
+            <!-- SELESAI TAMPIL 4 BERITA -->
         </div><!-- /.blog-shortcodes -->
     </div><!-- /.flat-row -->
 
@@ -736,58 +740,52 @@
     <div class="flat-row bg-f7f7f7 pad-top0px pad-bottom0px">
         <div class="container">
             <div class="row">
+           
                 <div class="col-md-6">
+                <?php $no = 1;
+            $beritaterbaru = $this->M_data->beritaterbaru2(0, 4);
+                        foreach ($beritaterbaru->result() as $row) {
+                            $isi = strip_tags($row->isi_berita);
+                            $isi = substr($isi, 0, 180);
+                            $judul = seo_link($row->judul);
+                            $judulan = seo_link($row->nama_kategori);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            if ($row->gambar != '') {
+                                $gambar = base_url() . "foto_berita/" . $photopath . "/" . $row->gambar;
+                            } else {
+                                $gambar = base_url() . "foto_berita/image-default.jpg";
+                            }
+
+                            ?>
                     <div class="section-testimonial">
                         <div class="title-section style_2">
-                            <h2 class="title">What our<br>clients say about us</h2>
+                            <h2 class="title"><?php echo $row->judul; ?></h2>
                         </div>
                         <div class="flat-divider d20px"></div>
                         <div class="flat-testimonial">
                             <div class="flexslider">
                                 <ul class="slides">
+
                                     <li>
                                         <div class="testimonial bg-f7f7f7">
                                             <div class="testimonial-content">
-                                                <blockquote>John Doe and his crew are true craftsmen that produced high-quality work and were easy to work with too. The end result is magnificent and we get comments all of the time, from friends and strangers alike, how beautiful our home is.</blockquote>
+                                                <blockquote><?php echo $isi; ?></blockquote>
                                             </div>
                                             <div class="testimonial-meta">
                                                 <div class="testimonial-author">
                                                     <strong class="author-name">Phat Vo Ngoc</strong>
-                                                    <div class="author-info"><a href="#" class="company">ThemesFlat</a></div>
+                                                    <div class="author-info">
+                                                        <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul; ?>" class="company"><?php echo $row->hari; ?>, <?php echo tgl_indo($row->tanggal); ?></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div><!-- /.testimonial -->
                                     </li>
-                                    <li>
-                                        <div class="testimonial bg-f7f7f7">
-                                            <div class="testimonial">
-                                                <div class="testimonial-content">
-                                                    <blockquote>We had a vision, a budget and a very short timeline. John Doe and his crew came in and said yes to all three. It’s rare you are able to have an awesome space you love built for you, without hidden costs, and delivered the exact day promised.</blockquote>
-                                                </div>
-                                                <div class="testimonial-meta">
-                                                    <div class="testimonial-author">
-                                                        <strong class="author-name">Phat Vo Ngoc</strong>
-                                                        <div class="author-info"><a href="#" class="company">ThemesFlat</a></div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.testimonial -->
-                                        </div><!-- /.testimonial -->
-                                    </li>
-                                    <li>
-                                        <div class="testimonial bg-f7f7f7">
-                                            <div class="testimonial">
-                                                <div class="testimonial-content">
-                                                    <blockquote>The reason we like dealing with Fusion is because they respond quickly and if there is no chance of obtaining planning they will tell you on day one. They will not waste your money if there is no hope so that to me is fair play.</blockquote>
-                                                </div>
-                                                <div class="testimonial-meta">
-                                                    <div class="testimonial-author">
-                                                        <strong class="author-name">Phat Vo Ngoc</strong>
-                                                        <div class="author-info"><a href="#" class="company">ThemesFlat</a></div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.testimonial -->
-                                        </div><!-- /.testimonial -->
-                                    </li>
+
                                 </ul>
                             </div><!-- /.flexslider -->
                         </div><!-- /.flat-testimonial -->
@@ -795,8 +793,12 @@
                 </div><!-- /.col-md-6 -->
                 <div class="col-md-6">
                     <div class="image-single">
-                        <img src="<?php echo base_url(); ?>images/img-single/img-clients.jpg" alt="images">
+                        <img src="<?php echo $gambar; ?>" alt="images">
                     </div>
+
+                <?php
+                            $no = $no + 1;
+                        } ?>
                 </div><!-- /.col-md-6 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
