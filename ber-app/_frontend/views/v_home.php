@@ -413,7 +413,7 @@ $(document).on({
                             <div class="portfolio-thumbnail">
                             <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                 <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images">
-                                </a>
+                                </a> 
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
                                         <a href="portfolio-single-type-list.html">
