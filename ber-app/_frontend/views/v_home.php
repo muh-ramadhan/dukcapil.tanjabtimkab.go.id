@@ -314,181 +314,60 @@ $(document).on({
             <div class="flat-divider d32px"></div>
             <div class="flat-portfolio portfolio-masonry margin20px">
                 <div class="portfolio"> 
-                
-                    <div class="portfolio-item item-four-column management">
-                    <?php 
-				$fotokolom=$this->M_data->fotokolom(0,1);
-				foreach($fotokolom->result() as $row){ 
-					$isi=strip_tags($row->keterangan);
-					$isi=substr($isi,0,140); 
-					$judul=seo_link($row->judul_fotoberita);
-					$photopath = str_replace('-', '/', $row->tanggal_modif);
-					$a=substr($row->tanggal, 0,4);
-					$b=substr($row->tanggal, 5,2);
-					$c=substr($row->tanggal, 8,9);
-					$tanggal=$c.'/'.$b.'/'.$a;  
-					?>
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-thumbnail">
-                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images">
-                                </a>
-                                <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <span>Quick View</span></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-info">
-                                <div class="portfolio-info-wrap">                                                
-                                    <h6 class="portfolio-title">
-                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
-                                    </h6>
-                                    <ul class="portfolio-categories">
-                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                <?php } ?>
-                    </div><!-- /.portfolio-item -->
-
-
-                    <div class="portfolio-item item-four-column business">
-                    <?php 
-				$fotokolom=$this->M_data->fotokolom(0,1);
-				foreach($fotokolom->result() as $row){ 
-					$isi=strip_tags($row->keterangan);
-					$isi=substr($isi,0,140); 
-					$judul=seo_link($row->judul_fotoberita);
-					$photopath = str_replace('-', '/', $row->tanggal_modif);
-					$a=substr($row->tanggal, 0,4);
-					$b=substr($row->tanggal, 5,2);
-					$c=substr($row->tanggal, 8,9);
-					$tanggal=$c.'/'.$b.'/'.$a;  
-					?>
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-thumbnail">
-                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images">
-                                </a>
-                                <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html">
-                                        <span>Quick View</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="portfolio-info">
-                                <div class="portfolio-info-wrap">                                                
-                                    <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">2</a>
-                                    </h6>
-                                    <ul class="portfolio-categories">
-                                        <li><a href="#">Business</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <?php } ?>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column economy">
-                    <?php 
-				$fotokolom=$this->M_data->fotokolom(0,1);
-				foreach($fotokolom->result() as $row){ 
-					$isi=strip_tags($row->keterangan);
-					$isi=substr($isi,0,140); 
-					$judul=seo_link($row->judul_fotoberita);
-					$photopath = str_replace('-', '/', $row->tanggal_modif);
-					$a=substr($row->tanggal, 0,4);
-					$b=substr($row->tanggal, 5,2);
-					$c=substr($row->tanggal, 8,9);
-					$tanggal=$c.'/'.$b.'/'.$a;  
-					?>
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-thumbnail">
-                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images">
-                                </a> 
-                                <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html">
-                                        <span>Quick View</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-info">
-                                <div class="portfolio-info-wrap">                                                
-                                    <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">3</a>
-                                    </h6>
-                                    <ul class="portfolio-categories">
-                                        <li><a href="#">Economy</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                <?php } ?>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column business">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
-                                <img src="images/portfolio/4.jpg" alt="images"></a>
-                                <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html">
-                                        <span>Quick View</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-info">
-                                <div class="portfolio-info-wrap">                                                
-                                    <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">4<a>
-                                    </h6>
-                                    <ul class="portfolio-categories">
-                                        <li><a href="#">Business</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
                     <div class="portfolio-item item-four-column management">
                         <div class="portfolio-wrap">
+                        <?php 
+				$fotokolom=$this->M_data->fotokolom(7,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
                             <div class="portfolio-thumbnail">
                                 <a href="portfolio-single-type-list.html">
-                                <img src="images/portfolio/6.jpg" alt="images"></a>
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html">
-                                        <span>Quick View</span></a>
+                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">5</a>
+                                        <a href="portfolio-single-type-list.html">Identity Card Holder</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Management</a></li>
                                     </ul>
                                 </div>
                             </div>
+                <?php } ?>
                         </div>
                     </div><!-- /.portfolio-item -->
 
-                    <div class="portfolio-item item-four-column economy">
+                    <div class="portfolio-item item-four-column business">
                         <div class="portfolio-wrap">
+                        <?php 
+				$fotokolom=$this->M_data->fotokolom(6,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html"><img src="images/portfolio/8.jpg" alt="images"></a>
+                                <a href="portfolio-single-type-list.html">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
                                         <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
@@ -498,20 +377,71 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">6</a>
+                                        <a href="portfolio-single-type-list.html">Business Cards Mockup</a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="#">Business</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                <?php } ?>
+                        </div>
+                    </div><!-- /.portfolio-item -->
+
+                    <div class="portfolio-item item-four-column economy">
+                        <div class="portfolio-wrap">
+                        <?php 
+				$fotokolom=$this->M_data->fotokolom(5,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
+                            <div class="portfolio-thumbnail">
+                                <a href="portfolio-single-type-list.html">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">                                                
+                                    <h6 class="portfolio-title">
+                                        <a href="portfolio-single-type-list.html">Black Wine Bottle</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Economy</a></li>
                                     </ul>
                                 </div>
                             </div>
+                <?php } ?>
                         </div>
                     </div><!-- /.portfolio-item -->
 
-                    <div class="portfolio-item item-four-column invoicing">
+                    <div class="portfolio-item item-four-column business">
                         <div class="portfolio-wrap">
+                        <?php 
+				$fotokolom=$this->M_data->fotokolom(4,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html"><img src="images/portfolio/5.jpg" alt="images"></a>
+                                <a href="portfolio-single-type-list.html">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
                                         <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
@@ -521,20 +451,145 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">7</a>
+                                        <a href="portfolio-single-type-list.html">Coffee &amp; Tea Exchange</a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="#">Business</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                <?php } ?>
+                        </div>
+                    </div><!-- /.portfolio-item -->
+
+                    <div class="portfolio-item item-four-column management">
+                        <div class="portfolio-wrap">
+                        <?php 
+				$fotokolom=$this->M_data->fotokolom(2,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
+                            <div class="portfolio-thumbnail">
+                                <a href="portfolio-single-type-list.html">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">                                                
+                                    <h6 class="portfolio-title">
+                                        <a href="portfolio-single-type-list.html">P H . D Card Mocup</a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="#">Management</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                <?php } ?>
+                        </div>
+                    </div><!-- /.portfolio-item -->
+
+                    <div class="portfolio-item item-four-column economy">
+                        <div class="portfolio-wrap">
+                        <?php 
+				$fotokolom=$this->M_data->fotokolom(0,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
+                            <div class="portfolio-thumbnail">
+                                <a href="portfolio-single-type-list.html">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">                                                
+                                    <h6 class="portfolio-title">
+                                        <a href="portfolio-single-type-list.html">Rambler &amp; Co</a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="#">Economy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                <?php } ?>
+                        </div>
+                    </div><!-- /.portfolio-item -->
+
+                    <div class="portfolio-item item-four-column invoicing">
+                        <div class="portfolio-wrap">
+                        <?php 
+				$fotokolom=$this->M_data->fotokolom(3,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
+                            <div class="portfolio-thumbnail">
+                                <a href="portfolio-single-type-list.html">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">                                                
+                                    <h6 class="portfolio-title">
+                                        <a href="portfolio-single-type-list.html">Oskar Kullander<br>Booklet</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Invoicing</a></li>
                                     </ul>
                                 </div>
                             </div>
+                <?php } ?>
                         </div>
                     </div><!-- /.portfolio-item -->
 
                     <div class="portfolio-item item-four-column business invoicing">
                         <div class="portfolio-wrap">
+                        <?php 
+				$fotokolom=$this->M_data->fotokolom(1,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html"><img src="images/portfolio/7.jpg" alt="images"></a>
+                                <a href="portfolio-single-type-list.html">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
                                         <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
@@ -544,7 +599,7 @@ $(document).on({
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">8</a>
+                                        <a href="portfolio-single-type-list.html">Rubber Stamp MockUp</a>
                                     </h6>
                                     <ul class="portfolio-categories">
                                         <li><a href="#">Business</a></li>
@@ -552,8 +607,11 @@ $(document).on({
                                     </ul>
                                 </div>
                             </div>
+                <?php } ?>
                         </div>
-                    </div><!-- /.portfolio-item -->                                        
+                    </div><!-- /.portfolio-item -->   
+                    
+                    
                 </div><!-- /.portfolio -->
             </div><!-- /.flat-portfolio -->
         </div><!-- /.flat-row -->
