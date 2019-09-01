@@ -357,11 +357,22 @@ $(document).on({
 
 
                     <div class="portfolio-item item-four-column business">
+                    <?php 
+				$fotokolom=$this->M_data->fotokolom(0,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
                         <div class="portfolio-wrap">
-
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
-                                <img src="images/portfolio/2.jpg" alt="images">
+                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images">
                                 </a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
@@ -381,15 +392,28 @@ $(document).on({
                                     </ul>
                                 </div>
                             </div>
-                            
                         </div>
+                        <?php } ?>
                     </div><!-- /.portfolio-item -->
 
                     <div class="portfolio-item item-four-column economy">
+                    <?php 
+				$fotokolom=$this->M_data->fotokolom(0,1);
+				foreach($fotokolom->result() as $row){ 
+					$isi=strip_tags($row->keterangan);
+					$isi=substr($isi,0,140); 
+					$judul=seo_link($row->judul_fotoberita);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					$a=substr($row->tanggal, 0,4);
+					$b=substr($row->tanggal, 5,2);
+					$c=substr($row->tanggal, 8,9);
+					$tanggal=$c.'/'.$b.'/'.$a;  
+					?>
                         <div class="portfolio-wrap">
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
-                                <img src="images/portfolio/3.jpg" alt="images"></a>
+                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images">
+                                </a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
                                         <a href="portfolio-single-type-list.html">
@@ -408,6 +432,7 @@ $(document).on({
                                 </div>
                             </div>
                         </div>
+                <?php } ?>
                     </div><!-- /.portfolio-item -->
 
                     <div class="portfolio-item item-four-column business">
