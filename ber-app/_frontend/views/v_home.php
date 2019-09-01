@@ -671,7 +671,7 @@ $(document).on({
                         </div>
                         <div class="title-section">
                             <div class="desc color-style_1 mag-top10px">
-                                Show Amazing Video
+                                Show Amazing
                             </div>
                         </div>
                     </div><!-- /.col-md-12 -->
