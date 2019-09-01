@@ -679,7 +679,7 @@
         </div><!-- /.flat-row -->
 
         <!-- Blgo shortcode -->
-        <div class="flat-row pad-top100px pad-bottom100px">
+        <div class="flat-row pad-top100px pad-bottom10px">
             <!-- MULAI TAMPIL 4 BERITA -->
             <div class="blog-shortcode blog-grid">
                 <div class="container">
@@ -734,116 +734,6 @@
             </div><!-- /.container -->
             <!-- SELESAI TAMPIL 4 BERITA -->
         </div><!-- /.blog-shortcodes -->
-    </div><!-- /.flat-row -->
-
-    <!-- Testimonial -->
-    <div class="flat-row bg-f7f7f7 pad-top0px pad-bottom0px">
-        <div class="container">
-            <div class="row">
-           
-                <div class="col-md-6">
-                <?php $no = 1;
-            $beritaterbaru = $this->M_data->beritaterbaru2(0, 4);
-                        foreach ($beritaterbaru->result() as $row) {
-                            $isi = strip_tags($row->isi_berita);
-                            $isi = substr($isi, 0, 180);
-                            $judul = seo_link($row->judul);
-                            $judulan = seo_link($row->nama_kategori);
-                            $photopath = str_replace('-', '/', $row->tanggal_modif);
-                            $a = substr($row->tanggal, 0, 4);
-                            $b = substr($row->tanggal, 5, 2);
-                            $c = substr($row->tanggal, 8, 9);
-                            $tanggal = $c . '/' . $b . '/' . $a;
-                            if ($row->gambar != '') {
-                                $gambar = base_url() . "foto_berita/" . $photopath . "/" . $row->gambar;
-                            } else {
-                                $gambar = base_url() . "foto_berita/image-default.jpg";
-                            }
-
-                            ?>
-                    <div class="section-testimonial">
-                        <div class="title-section style_2">
-                            <h2 class="title"><?php echo $row->judul; ?></h2>
-                        </div>
-                        <div class="flat-divider d20px"></div>
-                        <div class="flat-testimonial">
-                            <div class="flexslider">
-                                <ul class="slides">
-
-                                    <li>
-                                        <div class="testimonial bg-f7f7f7">
-                                            <div class="testimonial-content">
-                                                <blockquote><?php echo $isi; ?></blockquote>
-                                            </div>
-                                            <div class="testimonial-meta">
-                                                <div class="testimonial-author">
-                                                    <strong class="author-name">Phat Vo Ngoc</strong>
-                                                    <div class="author-info">
-                                                        <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul; ?>" class="company"><?php echo $row->hari; ?>, <?php echo tgl_indo($row->tanggal); ?></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.testimonial -->
-                                    </li>
-
-                                </ul>
-                            </div><!-- /.flexslider -->
-                        </div><!-- /.flat-testimonial -->
-                    </div><!-- /.section-testimonial -->
-                </div><!-- /.col-md-6 -->
-                <div class="col-md-6">
-                    <div class="image-single">
-                        <img src="<?php echo $gambar; ?>" alt="images">
-                    </div>
-
-                <?php
-                            $no = $no + 1;
-                        } ?>
-                </div><!-- /.col-md-6 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.flat-row -->
-
-    <!-- Clients -->
-    <div class="flat-row pad-top20px pad-bottom20px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="flat-clients" data-item="6" data-nav="false" data-dots="false" data-auto="true">
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/1.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/2.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/3.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/4.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/5.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/6.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/1.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/2.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/3.png" alt="images">
-                        </div>
-                        <div class="client-featured">
-                            <img src="<?php echo base_url(); ?>images/client/4.png" alt="images">
-                        </div>
-                    </div><!-- /.flat-clients -->
-                </div><!-- /.col-md-12 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
     </div><!-- /.flat-row -->
 
     <!-- Footer -->
