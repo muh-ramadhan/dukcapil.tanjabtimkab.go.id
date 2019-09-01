@@ -322,7 +322,7 @@
 
 .title-section.style_2 .title {
     padding: 10px 0;
-    background-image: url(../images/testimonials/1.png);
+    background-image: url(./../images/testimonials/1.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -331,7 +331,7 @@
 /* About text
 -------------------------------------------------------------- */
 .bg-about {
-    background-image: url(../images/about/1.jpg);
+    background-image: url(./../images/about/1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2495,7 +2495,7 @@ a.loadmore:hover {
 -------------------------------------------------------------- */
 .flat-cta {
     padding: 30px;
-    background-image: url(../images/img-single/bg-cta.jpg);
+    background-image: url(./../images/img-single/bg-cta.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

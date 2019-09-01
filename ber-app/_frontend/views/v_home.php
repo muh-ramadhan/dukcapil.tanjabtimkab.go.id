@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<head>
  
 <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -38,24 +38,17 @@ $gambar=   base_url() ."foto_berita/default-image-big.jpg";
     
 	<!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>style/css/bootstrap.css" >
-
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>style/css/style.css">
-
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>style/css/responsive.css">
-
     <!-- Colors -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>style/css/colors/color1.css" id="colors">
-    
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>style/css/animate.css">
 	
-	  
- 
-
- 
 <link rel="shortcut icon" href="<?php echo base_url(); ?>style/images/favicon.png">
+
 </head>
 <body class="header-sticky page-loading">  
 
@@ -228,7 +221,7 @@ $(document).on({
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <img src="images/icon/button1.png" alt="images">
+                            <img src="<?php echo base_url(); ?>images/icon/button1.png" alt="images">
                         </div>
                     </div><!-- /.col-md-12 -->
                 </div><!-- /.row -->
@@ -303,9 +296,9 @@ $(document).on({
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title-section">
-                            <h3 class="title">Rencent <strong>Portfolio</strong></h3>
+                            <h3 class="title">Galeri <strong>Kegiatan</strong></h3>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus leo orci,<br>id pharetra odio varius ac.
+                                Berikut adalah Galeri kegiatan di instansi kami.
                             </div>
                         </div>
                     </div><!-- /.col-md-12 -->
@@ -329,21 +322,21 @@ $(document).on({
 					$tanggal=$c.'/'.$b.'/'.$a;  
 					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                     <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
                                     <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>"><span>Perbesar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Identity Card Holder</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Management</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -366,21 +359,21 @@ $(document).on({
 					$tanggal=$c.'/'.$b.'/'.$a;  
 					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                     <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>"><span>Perbesar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Business Cards Mockup</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Business</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -403,21 +396,21 @@ $(document).on({
 					$tanggal=$c.'/'.$b.'/'.$a;  
 					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                     <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>"><span>Perbesar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Black Wine Bottle</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Economy</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -440,21 +433,21 @@ $(document).on({
 					$tanggal=$c.'/'.$b.'/'.$a;  
 					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                     <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>"><span>Perbesar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Coffee &amp; Tea Exchange</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Business</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -477,21 +470,21 @@ $(document).on({
 					$tanggal=$c.'/'.$b.'/'.$a;  
 					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                     <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>"><span>Perbesar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">P H . D Card Mocup</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Management</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -514,21 +507,21 @@ $(document).on({
 					$tanggal=$c.'/'.$b.'/'.$a;  
 					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                     <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>"><span>Perbesar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Rambler &amp; Co</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Economy</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -551,21 +544,21 @@ $(document).on({
 					$tanggal=$c.'/'.$b.'/'.$a;  
 					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                     <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>"><span>Perbesar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Oskar Kullander<br>Booklet</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Invoicing</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -588,22 +581,21 @@ $(document).on({
 					$tanggal=$c.'/'.$b.'/'.$a;  
 					?>
                             <div class="portfolio-thumbnail">
-                                <a href="portfolio-single-type-list.html">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
                                     <img src="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>" alt="images"></a>
                                 <div class="flat-figcaption">
-                                    <div class="project-buttons">
-                                        <a href="portfolio-single-type-list.html"><span>Quick View</span></a>
+                                <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo$photopath; ?>/small_<?php echo $row->gbr_gallery;?>"><span>Perbesar</span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="portfolio-info">
                                 <div class="portfolio-info-wrap">                                                
                                     <h6 class="portfolio-title">
-                                        <a href="portfolio-single-type-list.html">Rubber Stamp MockUp</a>
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
                                     </h6>
                                     <ul class="portfolio-categories">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">Invoicing</a></li>
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -674,7 +666,7 @@ $(document).on({
                     <div class="col-md-12">
                         <div class="flat-video-fancybox text-center">
                             <a class="fancybox" data-type="iframe" href="https://www.youtube.com/embed/p_E9S2nRrwM?autoplay=1"> 
-                                <img src="images/img-single/bg-video.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/img-single/bg-video.png" alt="images">
                             </a>
                         </div>
                         <div class="title-section">
@@ -717,7 +709,7 @@ $(document).on({
                             <article class="hentry">
                                 <div class="entry-cover">
                                     <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita."/".$judul;?>"><?php echo $row->judul; ?>">
-                                        <img src="<img src="<?php echo $gambar; ?>" alt="images">
+                                        <img src="<?php echo $gambar; ?>" alt="images">
                                     </a>
                                 </div>
                                 <div class="entry-header">
@@ -807,7 +799,7 @@ $(document).on({
                     </div><!-- /.col-md-6 -->
                     <div class="col-md-6">
                         <div class="image-single">
-                            <img src="images/img-single/img-clients.jpg" alt="images">
+                            <img src="<?php echo base_url(); ?>images/img-single/img-clients.jpg" alt="images">
                         </div>
                     </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
@@ -821,34 +813,34 @@ $(document).on({
                     <div class="col-md-12">
                         <div class="flat-clients" data-item="6" data-nav="false" data-dots="false" data-auto="true">
                             <div class="client-featured">
-                                <img src="images/client/1.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/1.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/2.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/2.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/3.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/3.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/4.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/4.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/5.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/5.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/6.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/6.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/1.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/1.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/2.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/2.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/3.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/3.png" alt="images">
                             </div>
                             <div class="client-featured">
-                                <img src="images/client/4.png" alt="images">
+                                <img src="<?php echo base_url(); ?>images/client/4.png" alt="images">
                             </div>
                         </div><!-- /.flat-clients -->
                     </div><!-- /.col-md-12 -->
