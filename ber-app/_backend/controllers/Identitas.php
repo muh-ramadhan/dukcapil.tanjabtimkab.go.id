@@ -31,7 +31,7 @@ function index()
 		//$data['vdata']='v_identitas';
 		$data['judulapp']="Identitas Website";
 		$data['vnavigasi']='navigasi'; 
-		$this->load->view('dashboard',$data);	 
+			$this->load->view('dashboard',$data);	 
     } 
 	
 	function a_simpan()
@@ -111,7 +111,8 @@ function index()
 			$data['vdata']='access-denied';  
 			$data['judulapp']="Access Denied";
 			$data['vnavigasi']='navigasi'; 
-			$this->load->view('dashboard',$data);	 
+			$this->load->view('dashboard',$data);
+			
 		} 
     }	
 	
