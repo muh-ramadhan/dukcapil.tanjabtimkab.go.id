@@ -2,11 +2,15 @@
             <div class="flat-top">
                 <div class="container">
                     <div class="row">
+                    <?php 
+								$identitas = $this->M_data->identitasfooter();
+								foreach($identitas->result() as $row) {
+									?>
                         <div class="flat-wrapper">
                             <div class="custom-info">
                                 <span>Sampaikan Pertanyaan Anda</span>
-                                <span><i class="fa fa-phone"></i>+21 383 866 246</span>
-                                <span><i class="fa fa-envelope"></i>dukcapil@tanjabtimkab.go.id</span> 
+                                <span><i class="fa fa-phone"></i><?php echo $row->no_telp; ?></span>
+                                <span><i class="fa fa-envelope"></i><?php echo $row->email; ?></span> 
                             </div>
 
                             <div class="social-links">
@@ -27,6 +31,7 @@
                                 </a>
                             </div>
                         </div><!-- /.flat-wrapper -->
+                                <?php } ?>
                     </div><!-- /.row -->
                 </div><!-- /.container -->
             </div><!-- /.flat-top -->
