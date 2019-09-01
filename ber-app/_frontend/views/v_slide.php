@@ -1,4 +1,4 @@
-       <div class="tp-banner-container">
+<div class="tp-banner-container">
             <div class="tp-banner" >
                 <ul>
                     <li data-transition="random-static" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
