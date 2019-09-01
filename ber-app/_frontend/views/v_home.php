@@ -684,8 +684,7 @@
             <div class="blog-shortcode blog-grid">
                 <div class="container">
                     <div class="row">
-                        <?php
-                        $no = 1;
+                        <?php $no = 1;
                         $beritaterbaru = $this->M_data->beritaterbaru2(0, 4);
                         foreach ($beritaterbaru->result() as $row) {
                             $isi = strip_tags($row->isi_berita);
@@ -707,13 +706,13 @@
                             <div class="col-md-6">
                                 <article class="hentry">
                                     <div class="entry-cover">
-                                        <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul; ?>"><?php echo $row->judul; ?>">
+                                        <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul; ?>"><?php echo $row->judul; ?>
                                             <img src="<?php echo $gambar; ?>" alt="images">
                                         </a>
                                     </div>
                                     <div class="entry-header">
                                         <h2 class="entry-title">
-                                            <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul; ?>"><?php echo $row->judul; ?>">3 Reasons Your Business Needs A Budget Now</a>
+                                            <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul; ?>"><?php echo $row->judul; ?></a>
                                         </h2>
                                         <div class="post-meta">
                                             <div class="entry-time"><?php echo $row->hari; ?>, <?php echo tgl_indo($row->tanggal); ?></div>
@@ -722,9 +721,7 @@
                                     <div class="entry-content"><?php echo $isi; ?></div>
                                 </article><!-- /.hentry -->
                             </div><!-- /.col-md-6 -->
-
-                        <?php
-                            $no = $no + 1;
+                        <?php $no = $no + 1;
                         } ?>
                     </div><!-- /.row -->
 
