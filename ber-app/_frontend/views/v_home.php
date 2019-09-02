@@ -679,11 +679,21 @@
         </div><!-- /.flat-row -->
 
         <!-- Blgo shortcode -->
-        <div class="flat-row pad-top100px pad-bottom10px">
-            <!-- MULAI TAMPIL 4 BERITA -->
+
+        <!-- MULAI TAMPIL 4 BERITA -->
+        <div class="flat-row pad-top100px pad-bottom100px">
             <div class="blog-shortcode blog-grid">
                 <div class="container">
+                <div class="row">
+                            <div class="col-md-12">
+                                <div class="title-section">
+                                    <h3 class="title">Berita <strong>Terbaru</strong></h3>                                    
+                                </div><!-- /.title-section -->
+                            </div>
+                        </div>
+                        <div class="flat-divider d50px"></div>
                     <div class="row">
+                    
                         <?php $no = 1;
                         $beritaterbaru = $this->M_data->beritaterbaru2(0, 4);
                         foreach ($beritaterbaru->result() as $row) {
@@ -700,9 +710,7 @@
                                 $gambar = base_url() . "foto_berita/" . $photopath . "/" . $row->gambar;
                             } else {
                                 $gambar = base_url() . "foto_berita/image-default.jpg";
-                            }
-
-                            ?>
+                            } ?>
                             <div class="col-md-6">
                                 <article class="hentry">
                                     <div class="entry-cover">
@@ -724,14 +732,61 @@
                         <?php $no = $no + 1;
                         } ?>
                     </div><!-- /.row -->
-
                     <div class="flat-divider d40px"></div>
-
                 </div><!-- /.row -->
             </div><!-- /.container -->
-            <!-- SELESAI TAMPIL 4 BERITA -->
         </div><!-- /.blog-shortcodes -->
     </div><!-- /.flat-row -->
+    <!-- SELESAI TAMPIL 4 BERITA -->
+
+    <!-- MULAI ARTIKEL -->
+    <div class="flat-row bg-f4f4f4 pad-top60px pad-bottom60px">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="flat-imagebox-carousel" data-item="4" data-nav="false" data-dots="true" data-auto="true">
+                        <?php $no = 1;
+                        $artikel = $this->M_data->artikelterbaru2(0, 4);
+                        foreach ($artikel->result() as $row) {
+                            $isi = strip_tags($row->isi_artikel);
+                            $isi = substr($isi, 0, 100);
+                            $judul = seo_link($row->judul);
+                            $judulan = seo_link($row->nama_kategori);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            if ($row->gambar != '') {
+                                $gambar = base_url() . "foto_artikel/" . $photopath . "/" . $row->gambar;
+                            } else {
+                                $gambar = base_url() . "foto_berita/image-default.jpg";
+                            }
+                            ?>
+                            <div class="imagebox">
+                                <div class="box-wrapper">
+                                    <div class="box-image">
+                                        <a href="<?php echo base_url(); ?>artikel/detail/<?php echo $row->id_artikel . "/" . $judul; ?>"><img src="<?php echo $gambar; ?>" alt="images"></a>
+                                    </div>
+                                    <div class="box-header">
+                                        <h3 class="box-title">
+                                            <a href="<?php echo base_url(); ?>artikel/detail/<?php echo $row->id_artikel . "/" . $judul; ?>"><?php echo $row->judul; ?></a>
+                                        </h3>
+                                    </div>
+                                    <div class="box-content">
+                                        <div class="box-desc"><?php echo $isi; ?>...</div>
+                                    </div>
+                                </div><!-- /.box-wrapper -->
+                            </div><!-- /.imagebox   -->
+                        <?php $no = $no + 1;
+                        } ?>
+                    </div><!-- /.flat-imagebox-carousel -->
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.flat-row -->
+    <!-- SELESAI ARTIKEL -->
 
     <!-- Footer -->
     <footer class="footer">
