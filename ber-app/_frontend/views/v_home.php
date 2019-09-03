@@ -162,7 +162,7 @@
                     <div class="col-md-8">
                         <div class="row">
                             <div class="services-text-1">
-                                <h3 class="color-ffffff">Restructuring Plans</h3>
+                                <h3 class="color-ffffff">Sambutan Kepala</h3>
                                 <p class="color-999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet iaculis ipsum aliquet ultricies. Sed a tincidunt enim. Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum.</p>
                             </div><!-- /.services-text-1 -->
                         </div><!-- /.row -->
