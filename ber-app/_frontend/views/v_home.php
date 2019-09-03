@@ -97,79 +97,6 @@
         <div class="flat-row parallax parallax1">
             <div class="overlay"></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="iconbox style_1 mag-top">
-                            <div class="box-header">
-                                <div class="box-icon">
-                                    <i class="fa icons icon-calculator"></i>
-                                </div>
-                                <h5 class="box-title">Management Support</h5>
-                            </div>
-                            <div class="box-content">
-                                <span class="font-size-14px">The professional management of a business doesn’t live without accurate information and timely.</span>
-                                <p class="box-readmore">
-                                    <a href="#">Read More</a>
-                                </p>
-                            </div>
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3">
-                        <div class="iconbox style_1 mag-top">
-                            <div class="box-header">
-                                <div class="box-icon">
-                                    <i class="fa icons icon-layers"></i>
-                                </div>
-                                <h5 class="box-title">Investment Projects</h5>
-                            </div>
-                            <div class="box-content">
-                                <span class="font-size-14px">For those looking to invest in the<br>growth of your business or create a new business.</span>
-                                <p class="box-readmore">
-                                    <a href="#">Read More</a>
-                                </p>
-                            </div>
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3">
-                        <div class="iconbox style_1 mag-top">
-                            <div class="box-header">
-                                <div class="box-icon">
-                                    <i class="fa icons icon-chart"></i>
-                                </div>
-                                <h5 class="box-title">Restructuring Plans</h5>
-                            </div>
-                            <div class="box-content">
-                                <span class="font-size-14px">Adapt your business to the new market conditions. Redefine your strategy, restructure your debt.</span>
-                                <p class="box-readmore">
-                                    <a href="#">Read More</a>
-                                </p>
-                            </div>
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.col-md-3 -->
-                    <div class="col-md-3">
-                        <div class="iconbox style_1 highlight">
-                            <div class="box-header">
-                                <h5 class="box-title pad-top">What we Offer?</h5>
-                            </div>
-                            <div class="box-content">
-                                <span class="font-size-14px">With over 20 years of experience we’ll ensure you’re getting the best guidance from the Fusion.</span>
-                                <p class="iconbox-button">
-                                    <a href="#" class="button style_1 has-icon small highlight">View Services</a>
-                                </p>
-                            </div>
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.col-md-3 -->
-                </div><!-- /.row -->
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="flat-border-bottom">
-                            <span class="sep-holder">
-                                <span class="sep-line"></span>
-                            </span>
-                        </div>
-                    </div><!-- /.col-md-12 -->
-                </div><!-- /.row -->
 
                 <div class="flat-divider d30px"></div>
 
@@ -225,27 +152,42 @@
             </div><!-- /.container -->
         </div><!-- /.flat-row -->
 
-        <!-- Group button -->
-        <div class="flat-row bg-222222">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="title-section style_1">
-                            <h3 class="title color-ffffff">Management in hard times.</h3>
-                            <div class="desc">
-                                Don’t let your business evolve according to the pace of others. Contact us to discover how we can help with the management of your company.
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-8 -->
-                    <div class="col-md-4">
-                        <div class="group-button text-center">
-                            <a class="button white lg rounded" href="#">Read More</a>
-                            <a class="button lg rounded" href="contact.html">Contact Us</a>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </div><!-- /.flat-row -->
+<!-- MULAI SAMBUTAN KEPALA -->
+<div class="flat-row pad-top60px pad-bottom60px parallax parallax3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/services/3.jpg" alt="images">
+                            </div><!-- /.col-md-4 -->
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="services-text-1">
+                                            <h3 class="color-ffffff">Restructuring Plans</h3>
+                                            <p class="color-999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet iaculis ipsum aliquet ultricies. Sed a tincidunt enim. Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum.</p>
+                                        </div><!-- /.services-text-1 -->
+                                    </div><!-- /.col-md-8 -->
+                                    <div class="col-md-4">
+                                        <div class="pricing-table one-column">
+                                            <div class="price-column highlight">
+                                                <div class="column-container">
+                                                    <div class="plan">Pricing plans</div>
+                                                    <div class="price">
+                                                        <span class="symbol">$</span><span class="prices">300</span>
+                                                        <div class="ide">Ideal for beginners</div>
+                                                    </div>
+                                                    <div class="cta"><a class="button" href="#">Choose your plan</a></div>
+                                                </div>
+                                            </div><!-- /.price-column  -->
+                                        </div><!-- /.pricing-table -->
+                                    </div><!-- /.col-md-4 -->
+                                </div><!-- /.row -->
+                            </div><!-- /.col-md-8 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.flat-row -->
+<!-- SELESAI SAMBUTAN KEPALA -->
+
 
         <!-- Accordion -->
         <div class="flat-row bg-f7f7f7 pad-top0px pad-bottom0px">
@@ -331,7 +273,7 @@
                                 <div class="portfolio-info">
                                     <div class="portfolio-info-wrap">
                                         <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
+                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?>
                                         </h6>
                                         <ul class="portfolio-categories">
                                             <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
@@ -714,7 +656,7 @@
                             <div class="col-md-6">
                                 <article class="hentry">
                                     <div class="entry-cover">
-                                        <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul; ?>"><?php echo $row->judul; ?>
+                                        <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul; ?>">
                                             <img src="<?php echo $gambar; ?>" alt="images">
                                         </a>
                                     </div>
@@ -728,6 +670,7 @@
                                     </div>
                                     <div class="entry-content"><?php echo $isi; ?></div>
                                 </article><!-- /.hentry -->
+                                <div class="flat-divider d20px"></div>
                             </div><!-- /.col-md-6 -->
                         <?php $no = $no + 1;
                         } ?>
