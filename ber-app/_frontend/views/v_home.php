@@ -152,41 +152,25 @@
             </div><!-- /.container -->
         </div><!-- /.flat-row -->
 
-<!-- MULAI SAMBUTAN KEPALA -->
-<div class="flat-row pad-top60px pad-bottom60px parallax parallax3">
-                    <div class="container">
+        <!-- MULAI SAMBUTAN KEPALA -->
+        <div class="flat-row pad-top60px pad-bottom60px parallax parallax3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="images/services/3.jpg" alt="images">
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-8">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img src="images/services/3.jpg" alt="images">
-                            </div><!-- /.col-md-4 -->
-                            <div class="col-md-8">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="services-text-1">
-                                            <h3 class="color-ffffff">Restructuring Plans</h3>
-                                            <p class="color-999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet iaculis ipsum aliquet ultricies. Sed a tincidunt enim. Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum.</p>
-                                        </div><!-- /.services-text-1 -->
-                                    </div><!-- /.col-md-8 -->
-                                    <div class="col-md-4">
-                                        <div class="pricing-table one-column">
-                                            <div class="price-column highlight">
-                                                <div class="column-container">
-                                                    <div class="plan">Pricing plans</div>
-                                                    <div class="price">
-                                                        <span class="symbol">$</span><span class="prices">300</span>
-                                                        <div class="ide">Ideal for beginners</div>
-                                                    </div>
-                                                    <div class="cta"><a class="button" href="#">Choose your plan</a></div>
-                                                </div>
-                                            </div><!-- /.price-column  -->
-                                        </div><!-- /.pricing-table -->
-                                    </div><!-- /.col-md-4 -->
-                                </div><!-- /.row -->
-                            </div><!-- /.col-md-8 -->
+                            <div class="services-text-1">
+                                <h3 class="color-ffffff">Restructuring Plans</h3>
+                                <p class="color-999999">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet iaculis ipsum aliquet ultricies. Sed a tincidunt enim. Maecenas ultrices viverra ligula, vel lobortis ante pulvinar sed deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum.</p>
+                            </div><!-- /.services-text-1 -->
                         </div><!-- /.row -->
-                    </div><!-- /.container -->
-                </div><!-- /.flat-row -->
-<!-- SELESAI SAMBUTAN KEPALA -->
+                    </div><!-- /.col-md-8 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.flat-row -->
+        <!-- SELESAI SAMBUTAN KEPALA -->
 
 
         <!-- Accordion -->
@@ -626,16 +610,16 @@
         <div class="flat-row pad-top100px pad-bottom100px">
             <div class="blog-shortcode blog-grid">
                 <div class="container">
-                <div class="row">
-                            <div class="col-md-12">
-                                <div class="title-section">
-                                    <h3 class="title">Berita <strong>Terbaru</strong></h3>                                    
-                                </div><!-- /.title-section -->
-                            </div>
-                        </div>
-                        <div class="flat-divider d50px"></div>
                     <div class="row">
-                    
+                        <div class="col-md-12">
+                            <div class="title-section">
+                                <h3 class="title">Berita <strong>Terbaru</strong></h3>
+                            </div><!-- /.title-section -->
+                        </div>
+                    </div>
+                    <div class="flat-divider d50px"></div>
+                    <div class="row">
+
                         <?php $no = 1;
                         $beritaterbaru = $this->M_data->beritaterbaru2(0, 4);
                         foreach ($beritaterbaru->result() as $row) {
@@ -685,7 +669,7 @@
     <!-- MULAI ARTIKEL -->
     <div class="flat-row bg-f4f4f4 pad-top60px pad-bottom60px">
         <div class="container">
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="flat-imagebox-carousel" data-item="4" data-nav="false" data-dots="true" data-auto="true">
