@@ -41,9 +41,12 @@
                 <div class="row">
                     <div class="flat-wrapper">
                         <div id="logo" class="logo">
-                            <a href="<?php echo base_url(); ?>">
-                                <img src="<?php echo base_url(); ?>style/images/logo.png" alt="images">
-                            </a>
+                            <?php $identitas = $this->M_data->identitasfooter();
+                            foreach ($identitas->result() as $row) { ?>
+                                <a href="<?php echo base_url(); ?>">
+                                    <img src="<?php echo base_url() ?>style/images/<?php echo $row->logo; ?>" alt="images">
+                                </a>
+                            <?php } ?>
                         </div><!-- /.logo -->
                         <div class="btn-menu">
                             <span></span>
