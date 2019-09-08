@@ -153,7 +153,7 @@
         </div><!-- /.flat-row -->
 
         <!-- MULAI SAMBUTAN KEPALA -->
-        <div class="flat-row pad-top60px pad-bottom60px parallax parallax3">
+        <div class="flat-row bg-222222 pad-top80px">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
@@ -173,441 +173,8 @@
         <!-- SELESAI SAMBUTAN KEPALA -->
 
 
-        <!-- Accordion -->
-        <div class="flat-row bg-f7f7f7 pad-top0px pad-bottom0px">
-            <div class="image-single style_1 clearfix">
-                <div class="item-two-column">
-                    <div class="flat-single-image-autoheight"></div>
-                </div><!-- /.item-two-column -->
-                <div class="item-two-column">
-                    <div class="section-accordion">
-                        <div class="title-section style_1">
-                            <h3 class="title">Frequently Asked Questions</h3>
-                        </div>
-
-                        <div class="flat-divider d30px"></div>
-
-                        <div class="flat-accordion">
-                            <div class="flat-toggle">
-                                <h6 class="toggle-title active"><i class="fa fa-bar-chart"></i>What are all the different types of accountants?</h6>
-                                <div class="toggle-content">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-                                </div>
-                            </div><!-- /toggle -->
-                            <div class="flat-toggle">
-                                <h6 class="toggle-title"><i class="fa fa-line-chart"></i>What Do Accountants Without Their CPA do?</h6>
-                                <div class="toggle-content">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-                                </div>
-                            </div><!-- /toggle -->
-
-                            <div class="flat-toggle">
-                                <h6 class="toggle-title"><i class="fa fa-signal"></i>How do I make a mid-career switch into accounting?</h6>
-                                <div class="toggle-content">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-                                </div>
-                            </div><!-- /toggle -->
-                        </div><!-- /.flat-accordion -->
-                    </div><!-- /.section-accordion -->
-                </div><!-- /.item-two-column -->
-            </div><!-- /.image-single -->
-        </div><!-- /.flat-row -->
-
-        <!-- Portfolio -->
-        <div class="flat-row pad-top80px pad-bottom0px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="title-section">
-                            <h3 class="title">Galeri <strong>Kegiatan</strong></h3>
-                            <div class="desc">
-                                Berikut adalah Galeri kegiatan di instansi kami.
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-12 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-            <div class="flat-divider d32px"></div>
-            <div class="flat-portfolio portfolio-masonry margin20px">
-                <!-- MULAI MODUL GALERI -->
-                <div class="portfolio">
-                    <div class="portfolio-item item-four-column management">
-                        <div class="portfolio-wrap">
-                            <?php
-                            $fotokolom = $this->M_data->fotokolom(7, 1);
-                            foreach ($fotokolom->result() as $row) {
-                                $isi = strip_tags($row->keterangan);
-                                $isi = substr($isi, 0, 140);
-                                $judul = seo_link($row->judul_fotoberita);
-                                $photopath = str_replace('-', '/', $row->tanggal_modif);
-                                $a = substr($row->tanggal, 0, 4);
-                                $b = substr($row->tanggal, 5, 2);
-                                $c = substr($row->tanggal, 8, 9);
-                                $tanggal = $c . '/' . $b . '/' . $a;
-                                ?>
-                                <div class="portfolio-thumbnail">
-                                    <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
-                                    <div class="flat-figcaption">
-                                        <div class="project-buttons">
-                                            <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-info-wrap">
-                                        <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?>
-                                        </h6>
-                                        <ul class="portfolio-categories">
-                                            <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column business">
-                        <div class="portfolio-wrap">
-                            <?php
-                            $fotokolom = $this->M_data->fotokolom(6, 1);
-                            foreach ($fotokolom->result() as $row) {
-                                $isi = strip_tags($row->keterangan);
-                                $isi = substr($isi, 0, 140);
-                                $judul = seo_link($row->judul_fotoberita);
-                                $photopath = str_replace('-', '/', $row->tanggal_modif);
-                                $a = substr($row->tanggal, 0, 4);
-                                $b = substr($row->tanggal, 5, 2);
-                                $c = substr($row->tanggal, 8, 9);
-                                $tanggal = $c . '/' . $b . '/' . $a;
-                                ?>
-                                <div class="portfolio-thumbnail">
-                                    <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
-                                    <div class="flat-figcaption">
-                                        <div class="project-buttons">
-                                            <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-info-wrap">
-                                        <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
-                                        </h6>
-                                        <ul class="portfolio-categories">
-                                            <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column economy">
-                        <div class="portfolio-wrap">
-                            <?php
-                            $fotokolom = $this->M_data->fotokolom(5, 1);
-                            foreach ($fotokolom->result() as $row) {
-                                $isi = strip_tags($row->keterangan);
-                                $isi = substr($isi, 0, 140);
-                                $judul = seo_link($row->judul_fotoberita);
-                                $photopath = str_replace('-', '/', $row->tanggal_modif);
-                                $a = substr($row->tanggal, 0, 4);
-                                $b = substr($row->tanggal, 5, 2);
-                                $c = substr($row->tanggal, 8, 9);
-                                $tanggal = $c . '/' . $b . '/' . $a;
-                                ?>
-                                <div class="portfolio-thumbnail">
-                                    <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
-                                    <div class="flat-figcaption">
-                                        <div class="project-buttons">
-                                            <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-info-wrap">
-                                        <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
-                                        </h6>
-                                        <ul class="portfolio-categories">
-                                            <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column business">
-                        <div class="portfolio-wrap">
-                            <?php
-                            $fotokolom = $this->M_data->fotokolom(4, 1);
-                            foreach ($fotokolom->result() as $row) {
-                                $isi = strip_tags($row->keterangan);
-                                $isi = substr($isi, 0, 140);
-                                $judul = seo_link($row->judul_fotoberita);
-                                $photopath = str_replace('-', '/', $row->tanggal_modif);
-                                $a = substr($row->tanggal, 0, 4);
-                                $b = substr($row->tanggal, 5, 2);
-                                $c = substr($row->tanggal, 8, 9);
-                                $tanggal = $c . '/' . $b . '/' . $a;
-                                ?>
-                                <div class="portfolio-thumbnail">
-                                    <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
-                                    <div class="flat-figcaption">
-                                        <div class="project-buttons">
-                                            <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-info-wrap">
-                                        <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
-                                        </h6>
-                                        <ul class="portfolio-categories">
-                                            <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column management">
-                        <div class="portfolio-wrap">
-                            <?php
-                            $fotokolom = $this->M_data->fotokolom(2, 1);
-                            foreach ($fotokolom->result() as $row) {
-                                $isi = strip_tags($row->keterangan);
-                                $isi = substr($isi, 0, 140);
-                                $judul = seo_link($row->judul_fotoberita);
-                                $photopath = str_replace('-', '/', $row->tanggal_modif);
-                                $a = substr($row->tanggal, 0, 4);
-                                $b = substr($row->tanggal, 5, 2);
-                                $c = substr($row->tanggal, 8, 9);
-                                $tanggal = $c . '/' . $b . '/' . $a;
-                                ?>
-                                <div class="portfolio-thumbnail">
-                                    <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
-                                    <div class="flat-figcaption">
-                                        <div class="project-buttons">
-                                            <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-info-wrap">
-                                        <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
-                                        </h6>
-                                        <ul class="portfolio-categories">
-                                            <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column economy">
-                        <div class="portfolio-wrap">
-                            <?php
-                            $fotokolom = $this->M_data->fotokolom(0, 1);
-                            foreach ($fotokolom->result() as $row) {
-                                $isi = strip_tags($row->keterangan);
-                                $isi = substr($isi, 0, 140);
-                                $judul = seo_link($row->judul_fotoberita);
-                                $photopath = str_replace('-', '/', $row->tanggal_modif);
-                                $a = substr($row->tanggal, 0, 4);
-                                $b = substr($row->tanggal, 5, 2);
-                                $c = substr($row->tanggal, 8, 9);
-                                $tanggal = $c . '/' . $b . '/' . $a;
-                                ?>
-                                <div class="portfolio-thumbnail">
-                                    <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
-                                    <div class="flat-figcaption">
-                                        <div class="project-buttons">
-                                            <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-info-wrap">
-                                        <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
-                                        </h6>
-                                        <ul class="portfolio-categories">
-                                            <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column invoicing">
-                        <div class="portfolio-wrap">
-                            <?php
-                            $fotokolom = $this->M_data->fotokolom(3, 1);
-                            foreach ($fotokolom->result() as $row) {
-                                $isi = strip_tags($row->keterangan);
-                                $isi = substr($isi, 0, 140);
-                                $judul = seo_link($row->judul_fotoberita);
-                                $photopath = str_replace('-', '/', $row->tanggal_modif);
-                                $a = substr($row->tanggal, 0, 4);
-                                $b = substr($row->tanggal, 5, 2);
-                                $c = substr($row->tanggal, 8, 9);
-                                $tanggal = $c . '/' . $b . '/' . $a;
-                                ?>
-                                <div class="portfolio-thumbnail">
-                                    <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
-                                    <div class="flat-figcaption">
-                                        <div class="project-buttons">
-                                            <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-info-wrap">
-                                        <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
-                                        </h6>
-                                        <ul class="portfolio-categories">
-                                            <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
-                    <div class="portfolio-item item-four-column business invoicing">
-                        <div class="portfolio-wrap">
-                            <?php
-                            $fotokolom = $this->M_data->fotokolom(1, 1);
-                            foreach ($fotokolom->result() as $row) {
-                                $isi = strip_tags($row->keterangan);
-                                $isi = substr($isi, 0, 140);
-                                $judul = seo_link($row->judul_fotoberita);
-                                $photopath = str_replace('-', '/', $row->tanggal_modif);
-                                $a = substr($row->tanggal, 0, 4);
-                                $b = substr($row->tanggal, 5, 2);
-                                $c = substr($row->tanggal, 8, 9);
-                                $tanggal = $c . '/' . $b . '/' . $a;
-                                ?>
-                                <div class="portfolio-thumbnail">
-                                    <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
-                                        <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
-                                    <div class="flat-figcaption">
-                                        <div class="project-buttons">
-                                            <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-info-wrap">
-                                        <h6 class="portfolio-title">
-                                            <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
-                                        </h6>
-                                        <ul class="portfolio-categories">
-                                            <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    </div><!-- /.portfolio-item -->
-
-
-                </div><!-- /.portfolio -->
-                <!-- SELESAI MODUL GALERI -->
-            </div><!-- /.flat-portfolio -->
-        </div><!-- /.flat-row -->
-
-        <!-- List -->
-        <div class="flat-row pad-top0px pad-bottom20px">
-            <div class="image-single style_1 clearfix">
-                <div class="item-two-column section-iconlist">
-                    <div class="title-section style_1">
-                        <h3 class="title">Why Choose <strong>Fusion?</strong></h3>
-                        <div class="desc">
-                            With over 20 years of experience, we recognize the importance of internationalization for company growth. Approximately 25% of our clients have an international presence.
-                        </div>
-                    </div>
-                    <div class="flat-divider d30px"></div>
-                    <div class="flat-iconlist">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul class="iconlist">
-                                    <li><i class="fa fa-cog"></i> Highly professional staff.</li>
-                                    <li><i class="fa fa-cog"></i> On Time and on Budget.</li>
-                                    <li><i class="fa fa-cog"></i> Vision for the business.</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="iconlist">
-                                    <li><i class="fa fa-cog"></i> Real value to a community.</li>
-                                    <li><i class="fa fa-cog"></i> Keeping you out of trouble.</li>
-                                    <li><i class="fa fa-cog"></i> With you for the long haul.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!-- /.flat-iconlist -->
-                    <div class="flat-divider d30px"></div>
-                    <a href="#" class="button lg dark">How can we help you?</a>
-                </div><!-- /.item-two-column -->
-                <div class="item-two-column mag-left flat-single-image-autoheight-style1">
-
-                </div><!-- /.item-two-column -->
-            </div><!-- /.image-single -->
-        </div><!-- /.flat-row -->
-
-        <!-- Video -->
-        <div class="flat-row parallax parallax5 pad-top90px pad-bottom90px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="title-section">
-                            <h3 class="title color-ffffff">OUR VISION</h3>
-                            <div class="desc color-style_1">
-                                A company isn’t distinguished by its dimension, but by how it is run.<br>Implementing good management practices is a reality that allows for an increase in<br>professionalism and competitiveness.
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-12 -->
-                </div><!-- /.row -->
-
-                <div class="flat-divider d20px"></div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="flat-video-fancybox text-center">
-                            <a class="fancybox" data-type="iframe" href="https://www.youtube.com/embed/p_E9S2nRrwM?autoplay=1">
-                                <img src="<?php echo base_url(); ?>images/img-single/bg-video.png" alt="images">
-                            </a>
-                        </div>
-                        <div class="title-section">
-                            <div class="desc color-style_1 mag-top10px">
-                                Show Amazing
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-12 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </div><!-- /.flat-row -->
-
-        <!-- Blgo shortcode -->
-
         <!-- MULAI TAMPIL 4 BERITA -->
-        <div class="flat-row pad-top100px pad-bottom100px">
+        <div class="flat-row pad-top60px pad-bottom60px">
             <div class="blog-shortcode blog-grid">
                 <div class="container">
                     <div class="row">
@@ -666,52 +233,422 @@
     </div><!-- /.flat-row -->
     <!-- SELESAI TAMPIL 4 BERITA -->
 
-    <!-- MULAI ARTIKEL -->
-    <div class="flat-row bg-f4f4f4 pad-top60px pad-bottom60px">
-        <div class="container">
 
+    <!-- MULAI GALERI KEGIATAN -->
+    <div class="flat-row bg-scheme pad-bottom60px">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="flat-imagebox-carousel" data-item="4" data-nav="false" data-dots="true" data-auto="true">
-                        <?php $no = 1;
-                        $artikel = $this->M_data->artikelterbaru2(0, 4);
-                        foreach ($artikel->result() as $row) {
-                            $isi = strip_tags($row->isi_artikel);
-                            $isi = substr($isi, 0, 100);
-                            $judul = seo_link($row->judul);
-                            $judulan = seo_link($row->nama_kategori);
+                    <div class="title-section">
+                        <h3 class="title about-text-1">Galeri <strong>Kegiatan</strong></h3>
+                        <div class="desc about-text-1">
+                            Berikut adalah Galeri kegiatan di instansi kami.
+                        </div>
+                    </div>
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        <div class="flat-divider d32px"></div>
+        <div class="flat-portfolio portfolio-masonry margin20px">
+            <!-- MULAI MODUL GALERI -->
+            <div class="portfolio">
+                <div class="portfolio-item item-four-column management">
+                    <div class="portfolio-wrap">
+                        <?php
+                        $fotokolom = $this->M_data->fotokolom(7, 1);
+                        foreach ($fotokolom->result() as $row) {
+                            $isi = strip_tags($row->keterangan);
+                            $isi = substr($isi, 0, 140);
+                            $judul = seo_link($row->judul_fotoberita);
                             $photopath = str_replace('-', '/', $row->tanggal_modif);
                             $a = substr($row->tanggal, 0, 4);
                             $b = substr($row->tanggal, 5, 2);
                             $c = substr($row->tanggal, 8, 9);
                             $tanggal = $c . '/' . $b . '/' . $a;
-                            if ($row->gambar != '') {
-                                $gambar = base_url() . "foto_artikel/" . $photopath . "/" . $row->gambar;
-                            } else {
-                                $gambar = base_url() . "foto_berita/image-default.jpg";
-                            }
                             ?>
-                            <div class="imagebox">
-                                <div class="box-wrapper">
-                                    <div class="box-image">
-                                        <a href="<?php echo base_url(); ?>artikel/detail/<?php echo $row->id_artikel . "/" . $judul; ?>"><img src="<?php echo $gambar; ?>" alt="images"></a>
+                            <div class="portfolio-thumbnail">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
                                     </div>
-                                    <div class="box-header">
-                                        <h3 class="box-title">
-                                            <a href="<?php echo base_url(); ?>artikel/detail/<?php echo $row->id_artikel . "/" . $judul; ?>"><?php echo $row->judul; ?></a>
-                                        </h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">
+                                    <h6 class="portfolio-title">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div><!-- /.portfolio-item -->
+
+                <div class="portfolio-item item-four-column business">
+                    <div class="portfolio-wrap">
+                        <?php
+                        $fotokolom = $this->M_data->fotokolom(6, 1);
+                        foreach ($fotokolom->result() as $row) {
+                            $isi = strip_tags($row->keterangan);
+                            $isi = substr($isi, 0, 140);
+                            $judul = seo_link($row->judul_fotoberita);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            ?>
+                            <div class="portfolio-thumbnail">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
                                     </div>
-                                    <div class="box-content">
-                                        <div class="box-desc"><?php echo $isi; ?>...</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">
+                                    <h6 class="portfolio-title">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div><!-- /.portfolio-item -->
+
+                <div class="portfolio-item item-four-column economy">
+                    <div class="portfolio-wrap">
+                        <?php
+                        $fotokolom = $this->M_data->fotokolom(5, 1);
+                        foreach ($fotokolom->result() as $row) {
+                            $isi = strip_tags($row->keterangan);
+                            $isi = substr($isi, 0, 140);
+                            $judul = seo_link($row->judul_fotoberita);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            ?>
+                            <div class="portfolio-thumbnail">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
                                     </div>
-                                </div><!-- /.box-wrapper -->
-                            </div><!-- /.imagebox   -->
-                        <?php $no = $no + 1;
-                        } ?>
-                    </div><!-- /.flat-imagebox-carousel -->
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">
+                                    <h6 class="portfolio-title">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div><!-- /.portfolio-item -->
+
+                <div class="portfolio-item item-four-column business">
+                    <div class="portfolio-wrap">
+                        <?php
+                        $fotokolom = $this->M_data->fotokolom(4, 1);
+                        foreach ($fotokolom->result() as $row) {
+                            $isi = strip_tags($row->keterangan);
+                            $isi = substr($isi, 0, 140);
+                            $judul = seo_link($row->judul_fotoberita);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            ?>
+                            <div class="portfolio-thumbnail">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">
+                                    <h6 class="portfolio-title">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div><!-- /.portfolio-item -->
+
+                <div class="portfolio-item item-four-column management">
+                    <div class="portfolio-wrap">
+                        <?php
+                        $fotokolom = $this->M_data->fotokolom(2, 1);
+                        foreach ($fotokolom->result() as $row) {
+                            $isi = strip_tags($row->keterangan);
+                            $isi = substr($isi, 0, 140);
+                            $judul = seo_link($row->judul_fotoberita);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            ?>
+                            <div class="portfolio-thumbnail">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">
+                                    <h6 class="portfolio-title">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div><!-- /.portfolio-item -->
+
+                <div class="portfolio-item item-four-column economy">
+                    <div class="portfolio-wrap">
+                        <?php
+                        $fotokolom = $this->M_data->fotokolom(0, 1);
+                        foreach ($fotokolom->result() as $row) {
+                            $isi = strip_tags($row->keterangan);
+                            $isi = substr($isi, 0, 140);
+                            $judul = seo_link($row->judul_fotoberita);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            ?>
+                            <div class="portfolio-thumbnail">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">
+                                    <h6 class="portfolio-title">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div><!-- /.portfolio-item -->
+
+                <div class="portfolio-item item-four-column invoicing">
+                    <div class="portfolio-wrap">
+                        <?php
+                        $fotokolom = $this->M_data->fotokolom(3, 1);
+                        foreach ($fotokolom->result() as $row) {
+                            $isi = strip_tags($row->keterangan);
+                            $isi = substr($isi, 0, 140);
+                            $judul = seo_link($row->judul_fotoberita);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            ?>
+                            <div class="portfolio-thumbnail">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">
+                                    <h6 class="portfolio-title">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div><!-- /.portfolio-item -->
+
+                <div class="portfolio-item item-four-column business invoicing">
+                    <div class="portfolio-wrap">
+                        <?php
+                        $fotokolom = $this->M_data->fotokolom(1, 1);
+                        foreach ($fotokolom->result() as $row) {
+                            $isi = strip_tags($row->keterangan);
+                            $isi = substr($isi, 0, 140);
+                            $judul = seo_link($row->judul_fotoberita);
+                            $photopath = str_replace('-', '/', $row->tanggal_modif);
+                            $a = substr($row->tanggal, 0, 4);
+                            $b = substr($row->tanggal, 5, 2);
+                            $c = substr($row->tanggal, 8, 9);
+                            $tanggal = $c . '/' . $b . '/' . $a;
+                            ?>
+                            <div class="portfolio-thumbnail">
+                                <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>">
+                                    <img src="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>" alt="images"></a>
+                                <div class="flat-figcaption">
+                                    <div class="project-buttons">
+                                        <a href="<?php echo base_url(); ?>foto_galeri/<?php echo $photopath; ?>/small_<?php echo $row->gbr_gallery; ?>"><span>Perbesar</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <div class="portfolio-info-wrap">
+                                    <h6 class="portfolio-title">
+                                        <a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $row->judul_fotoberita; ?></a>
+                                    </h6>
+                                    <ul class="portfolio-categories">
+                                        <li><a href="<?php echo base_url(); ?>galeri/detail/<?php echo $row->id_fotoberita; ?>/<?php echo seo_link($row->judul_fotoberita); ?>"><?php echo $tanggal; ?></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div><!-- /.portfolio-item -->
+
+
+            </div><!-- /.portfolio -->
+            <!-- SELESAI MODUL GALERI -->
+        </div><!-- /.flat-portfolio -->
+    </div><!-- /.flat-row -->
+    <!-- SELESAI GALERI KEGIATAN -->
+
+
+    <!-- Video -->
+    <div class="flat-row parallax parallax5 pad-top90px pad-bottom90px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-section">
+                        <h3 class="title color-ffffff">Video Kegiatan</h3>
+                    </div>
                 </div><!-- /.col-md-12 -->
             </div><!-- /.row -->
+
+            <div class="flat-divider d20px"></div>
+
+            <div class="row">
+                <?php
+                $video = $this->M_data->video(0, 1);
+                foreach ($video->result_array() as $row) {
+                    $link = str_replace('watch?v=', 'embed/', $row['link']);
+                    ?>
+                    <div class="col-md-12">
+                        <div class="flat-video-fancybox text-center">
+                            <a class="fancybox" data-type="iframe" href="<?php echo $link; ?>">
+                                <iframe width="100%" height="450" src="<?php echo $link; ?>" allowfullscreen></iframe>
+                            </a>
+                        </div>
+                        <div class="title-section">
+                            <div class="desc color-style_1 mag-top10px">
+                                Arsip Video
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-12 -->
+                <?php
+                }
+                ?>
+            </div><!-- /.row -->
         </div><!-- /.container -->
+    </div><!-- /.flat-row -->
+
+    <!-- Blgo shortcode -->
+
+
+    <!-- MULAI ARTIKEL -->
+    <div class="flat-row bg-f4f4f4 pad-top60px pad-bottom60px">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="title-section">
+                    <h3 class="title">Arikel <strong>Terbaru</strong></h3>
+                </div><!-- /.title-section -->
+            </div>
+        </div>
+        <div class="flat-divider d50px"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="flat-imagebox-carousel" data-item="4" data-nav="false" data-dots="true" data-auto="true">
+                    <?php $no = 1;
+                    $artikel = $this->M_data->artikelterbaru2(0, 4);
+                    foreach ($artikel->result() as $row) {
+                        $isi = strip_tags($row->isi_artikel);
+                        $isi = substr($isi, 0, 100);
+                        $judul = seo_link($row->judul);
+                        $judulan = seo_link($row->nama_kategori);
+                        $photopath = str_replace('-', '/', $row->tanggal_modif);
+                        $a = substr($row->tanggal, 0, 4);
+                        $b = substr($row->tanggal, 5, 2);
+                        $c = substr($row->tanggal, 8, 9);
+                        $tanggal = $c . '/' . $b . '/' . $a;
+                        if ($row->gambar != '') {
+                            $gambar = base_url() . "foto_artikel/" . $photopath . "/" . $row->gambar;
+                        } else {
+                            $gambar = base_url() . "foto_berita/image-default.jpg";
+                        }
+                        ?>
+                        <div class="imagebox">
+                            <div class="box-wrapper">
+                                <div class="box-image">
+                                    <a href="<?php echo base_url(); ?>artikel/detail/<?php echo $row->id_artikel . "/" . $judul; ?>"><img src="<?php echo $gambar; ?>" alt="images"></a>
+                                </div>
+                                <div class="box-header">
+                                    <h3 class="box-title">
+                                        <a href="<?php echo base_url(); ?>artikel/detail/<?php echo $row->id_artikel . "/" . $judul; ?>"><?php echo $row->judul; ?></a>
+                                    </h3>
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-desc"><?php echo $isi; ?>...</div>
+                                </div>
+                            </div><!-- /.box-wrapper -->
+                        </div><!-- /.imagebox   -->
+                    <?php $no = $no + 1;
+                    } ?>
+                </div><!-- /.flat-imagebox-carousel -->
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
     </div><!-- /.flat-row -->
     <!-- SELESAI ARTIKEL -->
 
