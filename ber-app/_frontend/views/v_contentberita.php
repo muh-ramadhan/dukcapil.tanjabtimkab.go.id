@@ -1,146 +1,223 @@
  <?php
   //--- KONDISI BILA DETAIL BERITA
-  if ($this->uri->segment(1, 0) == 'berita' and $this->uri->segment(2, 0) == 'detail') {
-    ?>
-   <div class="content grid_7 allberita marked-category">
-     <div class="single-page">
-       <?php
-          if (count($detail_berita->result()) > 0) {
-            foreach ($detail_berita->result() as $row) {
-              $photopath = str_replace('-', '/', $row->tanggal_modif);
-              $judul = seo_link($row->nama_kategori);
-              ?>
-
-           <div class="box-single-content">
-             <div class="breadcrumb">
-               <a href="<?php echo base_url(); ?>">Beranda </a>/ <a href="<?php echo base_url(); ?>kategori/<?php echo $row->kategori_seo; ?>"><?php echo $row->nama_kategori; ?> </a>
-             </div>
-             <h3 class="rs single-title"><?php echo $row->judul; ?></h3>
-             <p class="rs post-by"><?php
-                                          $tanggal = $row->tanggal;
-                                          echo nama_hari($tanggal) . ', ';
-                                          echo tgl_indo($tanggal) . ' | ';
-                                          echo $row->jam . ' WIB ';
-                                          ?>
-               | Dibaca: <?php echo $row->dibaca; ?> Kali </p>
-
-             <div class="left">
-               <link rel="stylesheet" href="http://bermultimedia.com/assets/social.css">
-               <div class="box-share">
-                 <div class="share clearfix">
-                   <div id="social-share"></div>
-                   <script>
-                     $(document).ready(function() {
-                       var link_socmed = "<?php echo current_url(); ?>"
-                       $('#social-share').klnsosial({
-                         url: "<?php echo current_url(); ?>",
-                         comment_count: -1,
-                         twitter_user: 'jdihtanjung jabung timurkab'
-                       });
-                     });
-                   </script>
-                   <script src="http://bermultimedia.com/assets/social.js"></script>
-                 </div>
+  if ($this->uri->segment(1, 0) == 'berita' and $this->uri->segment(2, 0) == 'detail') { ?>
+   <!-- Site content -->
+   <div id="site-content">
+     <div id="page-header">
+       <div class="container">
+         <div class="row">
+           <?php
+              if (count($detail_berita->result()) > 0) {
+                foreach ($detail_berita->result() as $row) {
+                  $photopath = str_replace('-', '/', $row->tanggal_modif);
+                  $judul = seo_link($row->nama_kategori); ?>
+               <div class="page-title">
+                 <h2 class="title"><?php echo $row->judul; ?></h2>
                </div>
-             </div>
-             <div class="clearfix"></div>
-             <div class="editor-content">
-               <?php if ($row->gambar != '') { ?>
-                 <div class="fotoimg" style=";margin-top:15px;margin-bottom:10px;">
-                   <center>
-                     <img class='img2' src="<?php echo base_url(); ?>foto_berita/<?php echo $photopath; ?>/<?php echo $row->gambar; ?>" border="0" width="100%"><br />
+               <div id="page-breadcrumbs">
+                 <nav class="breadcrumb-trail breadcrumbs">
+                   <ul class="trail-items">
+                     <li class="trail-item trail-begin"><a href="<?php echo base_url(); ?>">Home</a></li>
+                     <li class="trail-item trail-begin"><a href="<?php echo base_url(); ?>kategori/<?php echo $row->kategori_seo; ?>"><?php echo $row->nama_kategori; ?></a></li>
+                   </ul>
+                 </nav>
+               </div>
+         </div><!-- /.row -->
+       </div><!-- /.container -->
+     </div><!-- /#page-header -->
+
+     <div id="page-body">
+       <div class="container">
+         <div class="row">
+           <div class="blog-single">
+             <div class="main-content">
+
+               <article class="post">
+                 <div class="entry-wrapper">
+                   <div class="entry-cover">
+                     <a href="blog-single.html">
+                       <?php if ($row->gambar != '') { ?>
+                         <img src="<?php echo base_url(); ?>foto_berita/<?php echo $photopath; ?>/<?php echo $row->gambar; ?>" alt="images">
+                     </a>
                      <div style="padding:10px 0;color:#6f777a;border-bottom:1px solid #ccc;font-style:italic;margin:0;"><?php echo $row->text_foto; ?></div>
-                   </center>
-                 </div>
-               <?php } ?>
-               <br>
-               <?php echo $row->isi_berita; ?>
-             </div>
-           </div>
+                   <?php } ?>
+                   </div><!-- /.entry-cover -->
+                   <div class="entry-header">
+                     <span class="entry-time"><?php $tanggal = $row->tanggal;
+                                                    echo nama_hari($tanggal) . ', ';
+                                                    echo tgl_indo($tanggal) . ' | ';
+                                                    echo $row->jam . ' WIB '; ?></span>
+                     <h2 class="entry-title"><?php echo $row->judul; ?></h2>
+                     <div class="entry-meta">
+                       <span class="entry-categorues"><a href="<?php echo base_url(); ?>kategori/<?php echo $row->kategori_seo; ?>"><?php echo $row->nama_kategori; ?></a></span>
+                       <span class="entry-comments-link">Dibaca: <?php echo $row->dibaca; ?> Kali</span>
+                     </div><!-- /.entry-meta -->
+                   </div><!-- /.entry-header -->
+                   <div class="entry-content">
+                     <p><?php echo $row->isi_berita; ?></p>
+                   </div><!-- /.entry-content -->
+                 </div><!-- /.entry-wrapper -->
+               </article><!-- /.post -->
 
-           <div class="wrapper-box box-post-comment" style="margin-top:20px;">
-             <h4 class="rs title-box-outside">Komentar Facebook</h4>
-             <div class="clear"></div>
-             <div class="box-white">
-               <div id="fbcom1917175884" class="cmp_comments_container">
-                 <fb:comments href="<?php echo current_url(); ?>" num_posts="20" width="100%" colorscheme="light"></fb:comments>
-               </div>
-             </div>
-           </div>
-           <!-- AddThis Button END -->
+             <?php
+                    $id = $row->id_berita;
+                    $ip_addr = $this->input->ip_address();
+                  }
+                  $data = array('dibaca' => $row->dibaca + 1);
+                  $where = "id_berita = '" . $row->id_berita . "'";
+                  $str = $this->db->update('berita', $data, $where);
+                } else {
+                  ?> ! Maaf Data Belum Tersedia<br><br><br>
+           <?php } ?>
+             </div><!-- /.main-content -->
+
+             <!-- MULAI SIDEBAR -->
+             <?php $this->load->view($vkanan); ?>
+             <!-- SELESAI SIDEBAR -->
+
+
+           </div><!-- /.blog -->
+         </div><!-- /.row -->
+       </div><!-- /.container -->
+     </div><!-- /.page-body -->
+   </div><!-- /#site-content -->
+
+
+ <?php } else if ($this->uri->segment(1, 0) == 'kategori') { ?>
+   <!-- Site content -->
+   <div id="site-content">
+     <div id="page-header">
+       <div class="container">
+         <div class="row">
          <?php
-                $id = $row->id_berita;
-                $ip_addr = $this->input->ip_address();
-              }
 
-              $data = array('dibaca' => $row->dibaca + 1);
-              $where = "id_berita = '" . $row->id_berita . "'";
-              $str = $this->db->update('berita', $data, $where);
-            } else { ?>
-         ! Maaf Data Belum Tersedia<br><br><br>
-       <?php } ?>
-     </div>
-   </div>
- <?php
+if (count($artikel)) {
+
+?>
+
+
+
+<?php
+
+$no=1;
+
+foreach($artikel as $key => $row){ 
+
+$isi=strip_tags($row['isi_berita']);
+
+$isi=substr($isi,0,220); 
+
+$judul=seo_link($row['judul']);
+
+$photopath = str_replace('-', '/', $row['tanggal_modif']);				
+
+$a=substr($row['tanggal'], 0,4);
+
+$b=substr($row['tanggal'], 5,2);
+
+$c=substr($row['tanggal'], 8,9);
+
+$tanggal=$c.'/'.$b.'/'.$a;
+
+
+
+if  ($row['gambar']!='') { 
+
+$gambar=base_url() ."foto_berita/".$photopath."/small_".$row['gambar'];
+
+}
+
+else { 
+
+$gambar=base_url() ."foto_berita/image-default.jpg";
+
+}
+
+?>
+             <div class="page-title">
+               <h2 class="title"><?php echo $judulan; ?></h2>
+             </div>
+             <div id="page-breadcrumbs">
+               <nav class="breadcrumb-trail breadcrumbs">
+                 <ul class="trail-items">
+                   <li class="trail-item trail-begin"><a href="/">Home</a></li>
+                   <li class="trail-item trail-end"><a href="/berita">Berita</a></li>
+                 </ul>
+               </nav>
+             </div>
+         </div><!-- /.row -->
+       </div><!-- /.container -->
+     </div><!-- /#page-header -->
+
+     <div id="page-body">
+       <div class="container">
+         <div class="row">
+           <div class="blog">
+             <div class="main-content">
+
+               <article class="post">
+                 <div class="entry-wrapper">
+                   <div class="entry-cover">
+                     <img src="<?php echo $gambar; ?>" alt="images" style="height: 394.3px; width: 525.75px;">
+                   </div><!-- /.entry-cover -->
+                   <div class="entry-header">
+                     <span class="entry-time"><?php echo nama_hari($row['tanggal']) . ', '; ?> <?php echo tgl_indo($row['tanggal']); ?></span>
+                     <h2 class="entry-title">
+                       <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row['id_berita'] . "/" . $judul . "/"; ?>"><?php echo $row['judul']; ?></a>
+                     </h2>
+                     <div class="entry-meta">
+                       <span></span>
+                       <span class="entry-categories"><a href="#">Business</a></span>
+                     </div><!-- /.entry-meta -->
+                   </div><!-- /.entry-header -->
+                   <div class="entry-content">
+                     <?php echo $isi; ?>...
+                     <div class="readmore"><a href="blog-single.html" class="more-link">Selengkapnya</a></div>
+                   </div><!-- /.entry-content -->
+                 </div><!-- /.entry-wrapper -->
+               </article><!-- /.post -->
+
+               <?php
+
+$no=$no+1;
+
+}
+
+?>
+
+   
+
+  <?php
+
   }
 
-  //---- KONDISI BILA KATEGORI BERIT ------------
+else {
 
-  else if ($this->uri->segment(1, 0) == 'kategori') {
-    ?>
-   <div class="content grid_7 allberita marked-category">
-     <div class="single-page">
-       <h4 class="rs title-box-outside">Kategori <?php echo $judulan; ?></h4><br>
-       <?php if (count($artikel)) { ?>
+  ?>
 
-         <?php
-              $no = 1;
-              foreach ($artikel as $key => $row) {
-                $isi = strip_tags($row['isi_berita']);
-                $isi = substr($isi, 0, 220);
-                $judul = seo_link($row['judul']);
-                $photopath = str_replace('-', '/', $row['tanggal_modif']);
-                $a = substr($row['tanggal'], 0, 4);
-                $b = substr($row['tanggal'], 5, 2);
-                $c = substr($row['tanggal'], 8, 9);
-                $tanggal = $c . '/' . $b . '/' . $a;
+<h4 >Maaf, Data Belum Tersedia !</h4>
 
-                if ($row['gambar'] != '') {
-                  $gambar = base_url() . "foto_berita/" . $photopath . "/small_" . $row['gambar'];
-                } else {
-                  $gambar = base_url() . "foto_berita/image-default.jpg";
-                }
-                ?>
+<?php
 
-           <div class="content-info-short clearfix">
-             <a href="<?php echo base_url(); ?>berita/detail/<?php echo $row['id_berita'] . "/" . $judul . "/"; ?>" class="thumb-img">
-               <div class="thumb-news1" data-original="<?php echo $gambar; ?>" style="background-image: url('<?php echo $gambar; ?>')"></div>
-             </a>
+}
 
-             <div class="wrap-short-detail">
-               <h3 class="rs acticle-title"><a class="be-fc-orange" href="<?php echo base_url(); ?>berita/detail/<?php echo $row['id_berita'] . "/" . $judul . "/"; ?>"><?php echo $row['judul']; ?></a></h3>
-               <p class="rs tiny-desc"><?php echo nama_hari($row['tanggal']) . ', '; ?> <span class="fw-b fc-gray"><?php echo tgl_indo($row['tanggal']) . ' | ';
-                                                                                                                          echo $row['jam'] . ' WIB ';
-                                                                                                                          ?></span></p>
-               <p class="rs title-description"><?php echo $isi; ?>...</p>
-             </div>
-           </div>
-         <?php $no = $no + 1;
-              } ?>
+?>
+           <!-- MULAI NAVIGASI -->
+           <?php echo $pagination; ?>
+           <!-- SELESAI NAVIGASI -->
+           <?php 
 
-       <?php } else { ?>
-         <h4>Maaf, Data Belum Tersedia !</h4>
-       <?php } ?>
-       <div class="clearfix"></div>
-       <center>
-         <div class="pagination">
-           <ul class="tsc_pagination">
-             <?php echo $pagination; ?>
-           </ul>
-         </div>
-       </center>
-       <br>
-       <br>
-     </div>
-   </div>
- <?php } ?>
+}
+
+ ?>
+             </div><!-- /.main-content -->
+
+             <!-- MULAI SIDEBAR -->
+             <?php $this->load->view($vkanan); ?>
+             <!-- SELESAI SIDEBAR -->
+
+           </div><!-- /.blog -->
+         </div><!-- /.row -->
+       </div><!-- /.container -->
+     </div><!-- /.page-body -->
+   </div><!-- /#site-content -->

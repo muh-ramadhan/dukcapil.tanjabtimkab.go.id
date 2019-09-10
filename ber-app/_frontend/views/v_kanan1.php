@@ -10,7 +10,7 @@
 		</div>
 		<!-- SELESAI PENCARIAN -->
 
-		<!-- MULAI PROFIL --->
+		<!-- MULAI PROFIL -->
 		<div class="widget widget_recent_entries">
 			<h3 class="widget-title"><span>P</span>rofil Instansi</h3>
 			<ul>
