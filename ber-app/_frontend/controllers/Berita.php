@@ -113,7 +113,7 @@ class Berita extends CI_Controller
 		}
 		$config['base_url'] = base_url() . '/kategori/' . $ids . '/';
 		$config['total_rows'] = $row;
-		$config['per_page'] = 8;
+		$config['per_page'] = 5;
 		$config['uri_segment'] = 3;
 		$config['use_page_numbers'] = TRUE;
 		$config['first_link']       = 'First';
