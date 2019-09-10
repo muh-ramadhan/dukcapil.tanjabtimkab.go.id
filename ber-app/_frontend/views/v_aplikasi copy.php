@@ -1,27 +1,6 @@
 
 
 	
-
-		
-
-		
-
-		<div class="col-xs-6 col-sm-3 col-md-6 quick-link grants">
-
-			<a href="">
-
-				<span class="icon"></span>
-
-				<span class="title">Sistem Informasi Penduduk Miskin</span>
-
-			</a>
-
-		</div>
-
-	
-
-		
-
 		
 
 		<div class="col-xs-6 col-sm-3 col-md-6 quick-link flag-requests">
