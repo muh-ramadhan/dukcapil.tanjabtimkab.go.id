@@ -4,24 +4,6 @@
 
 		
 
-		<div class="col-xs-6 col-sm-3 col-md-6 quick-link service-academies">
-
-			<a href="">
-
-				<span class="icon"></span>
-
-				<span class="title">Digitalisasi Jalan & Jembatan (DJJ)</span>
-
-			</a>
-
-		</div>
-
-	
-
-		
-
-		
-
 		<div class="col-xs-6 col-sm-3 col-md-6 quick-link visiting-d-c">
 
 			<a href="">
