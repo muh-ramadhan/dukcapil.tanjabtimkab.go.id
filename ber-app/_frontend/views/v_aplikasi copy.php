@@ -1,23 +1,4 @@
 
-
-	
-
-		
-
-		
-
-		<div class="col-xs-6 col-sm-3 col-md-6 quick-link casework">
-
-			<a href="">
-
-				<span class="icon"></span>
-
-				<span class="title">SI MAYA</span>
-
-			</a>
-
-		</div>
-
 	
 
 		
