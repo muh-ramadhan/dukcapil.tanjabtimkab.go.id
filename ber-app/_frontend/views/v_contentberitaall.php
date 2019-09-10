@@ -54,13 +54,8 @@ foreach($artikel as $key => $row){
 												<a href="<?php echo base_url(); ?>berita/detail/<?php echo $row['id_berita']."/".$judul."/";?>"><?php echo $row['judul']; ?></a>
 											</h2>
         									<div class="entry-meta">
-        										<span>By</span>
-        										<span class="entry-author">
-        											<a href="#" class="entry-author-link">themesflat</a>
-        										</span>
-        										<span>in</span>
-        										<span class="entry-categories"><a href="#">Business</a></span>
-        										<span class="entry-comments-link"><a href="#">0</a></span>
+        										<span></span>
+												<span class="entry-categories"><a href="#">Business</a></span>
         									</div><!-- /.entry-meta -->
         								</div><!-- /.entry-header -->
         								<div class="entry-content">
@@ -69,11 +64,21 @@ foreach($artikel as $key => $row){
         								</div><!-- /.entry-content -->
         							</div><!-- /.entry-wrapper -->
 								</article><!-- /.post -->
-								
-								<?php $no=$no+1; } ?>
-  <?php } else { ?>
-<h4 >Maaf, Data Belum Tersedia !</h4>
-<?php } ?>
+								<?php
+								$no=$no+1; 
+                $id = $row->id_berita;
+                $ip_addr = $this->input->ip_address();
+              }
+
+              $data = array('dibaca' => $row->dibaca + 1);
+              $where = "id_berita = '" . $row->id_berita . "'";
+              $str = $this->db->update('berita', $data, $where);
+            } else { ?>
+         ! Maaf Data Belum Tersedia<br><br><br>
+	   <?php } ?>
+	   
+
+							
         						<!-- MULAI NAVIGASI -->
         						<?php echo $pagination; ?>
 								<!-- SELESAI NAVIGASI -->

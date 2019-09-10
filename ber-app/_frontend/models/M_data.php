@@ -579,6 +579,8 @@ define("TIME_ZONE","+07:00");
 		
 		
 		/*---------------------------- UNTUK BERITA ----------------------------*/
+
+		
 		public function judulan ( $id='' )
 		{
 			$query = $this->db->query('SELECT berita.id_berita,kategori.nama_kategori FROM berita,kategori    
