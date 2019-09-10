@@ -4,8 +4,7 @@
 <?php
     if (count($artikel)) {
 	?>
-<?php
-$no=1;
+<?php $no=1;
 foreach($artikel as $key => $row){ 
 	$isi=strip_tags($row['isi_berita']);
 	$isi=substr($isi,0,140); 
@@ -18,8 +17,7 @@ foreach($artikel as $key => $row){
 
 	if  ($row['gambar']!='') { 
 		$gambar=base_url() ."foto_berita/".$photopath."/small_".$row['gambar'];
-	}
-	else { 
+	} else { 
 		$gambar=base_url() ."foto_berita/image-default.jpg";
 	}
 ?>
@@ -35,10 +33,7 @@ foreach($artikel as $key => $row){
         <p class="rs title-description"><?php echo $isi; ?>...</p>
 	</div> 
 </div> 
-<?php
-$no=$no+1;
-}
-?>
+<?php $no=$no+1; } ?>
   <?php } else { ?>
 <h4 >Maaf, Data Belum Tersedia !</h4>
 <?php } ?>
