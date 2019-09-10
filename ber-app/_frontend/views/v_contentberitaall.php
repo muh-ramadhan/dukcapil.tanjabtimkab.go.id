@@ -1,65 +1,64 @@
-
-<div class="content grid_7 allberita marked-category">
-	<div class="single-page">
-<h4 class="rs title-box-outside">Berita Terkini</h4><br>
-<?php
-    if (count($artikel)) {
-	?>
-	 
-<?php
-$no=1;
-foreach($artikel as $key => $row){ 
-	$isi=strip_tags($row['isi_berita']);
-	$isi=substr($isi,0,140); 
-	$judul=seo_link($row['judul']);
-	$photopath = str_replace('-', '/', $row['tanggal_modif']);				
-	$a=substr($row['tanggal'], 0,4);
-	$b=substr($row['tanggal'], 5,2);
-	$c=substr($row['tanggal'], 8,9);
-	$tanggal=$c.'/'.$b.'/'.$a;
-	
-	if  ($row['gambar']!='') { 
-		$gambar=base_url() ."foto_berita/".$photopath."/small_".$row['gambar'];
-	}
-	else { 
-		$gambar=base_url() ."foto_berita/image-default.jpg";
-	}
-?>
-<div class="content-info-short clearfix">
-	<a href="<?php echo base_url(); ?>berita/detail/<?php echo $row['id_berita']."/".$judul."/";?>" class="thumb-img">
-		<div class="thumb-news1" data-original="<?php echo $gambar; ?>" style="background-image: url('<?php echo $gambar; ?>')"></div>   
-	</a>
-    <div class="wrap-short-detail">
-		<h3 class="rs acticle-title"><a class="be-fc-orange" href="<?php echo base_url(); ?>berita/detail/<?php echo $row['id_berita']."/".$judul."/";?>"><?php echo $row['judul']; ?></a></h3>
-        <p class="rs tiny-desc"><?php echo nama_hari($row['tanggal']).', ';?> <span class="fw-b fc-gray"><?php   echo tgl_indo($row['tanggal']).' | '; echo $row['jam'].' WIB ';
-		?></span></p>
-        <p class="rs title-description"><?php echo $isi; ?>...</p>
-	</div> 
-</div> 
-<?php
-$no=$no+1;
-}
-?>
-   
-  <?php
-  }
-else {
-  ?>
-<h4 >Maaf, Data Belum Tersedia !</h4>
-<?php
-}
-?>
-<div class="clearfix"></div>
-	<center>
-		  <div class="pagination">
-		<ul class="tsc_pagination">
-		<?php echo $pagination; ?>
-		</ul>
-		</div>
-	 </center>
-<br>
-<br>
-
-</div>
-</div>
- 
+        <!-- Site content -->
+        <div id="site-content">
+            <div id="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="page-title">
+                            <h2 class="title">Welcome to my blog</h2>
+                        </div>
+                        <div id="page-breadcrumbs">            
+                            <nav class="breadcrumb-trail breadcrumbs">
+                                <h2 class="trail-browse">You are here:</h2>
+                                <ul class="trail-items">
+                                    <li class="trail-item trail-begin"><a href="#">Home</a></li>
+                                    <li class="trail-item trail-end">Welcome to my blog</li>
+                                </ul>
+                            </nav>           
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /#page-header -->
+
+            <div id="page-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="blog">
+                            <div class="main-content">
+                                <article class="post">
+                                    <div class="entry-wrapper">
+                                        <div class="entry-cover">
+                                            <a href="blog-single.html">
+                                                <img src="images/blog/1.jpg" alt="images">
+                                            </a>
+                                        </div><!-- /.entry-cover -->
+                                        <div class="entry-header">
+                                            <span class="entry-time">January 26, 2016</span>
+                                            <h2 class="entry-title"><a href="blog-single.html">3 Reasons Your Business Needs A Budget Now</a></h2>
+                                            <div class="entry-meta">
+                                                <span>By</span>
+                                                <span class="entry-author">
+                                                    <a href="#" class="entry-author-link">themesflat</a>
+                                                </span>
+                                                <span>in</span>
+                                                <span class="entry-categories"><a href="#">Business</a></span>
+                                                <span class="entry-comments-link"><a href="#">0</a></span>
+                                            </div><!-- /.entry-meta -->
+                                        </div><!-- /.entry-header -->                                        
+                                        <div class="entry-content">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer too...
+                                            <div class="readmore"><a href="blog-single.html" class="more-link">Continue Read</a></div>
+                                        </div><!-- /.entry-content -->
+                                    </div><!-- /.entry-wrapper -->
+                                </article><!-- /.post -->
+								
+							</div><!-- /.main-content -->
+							
+							<!-- MULAI SIDEBAR -->
+							<?php $this->load->view($vkanan); ?>
+							<!-- SELESAI SIDEBAR -->
+
+                        </div><!-- /.blog -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.page-body -->
+        </div><!-- /#site-content -->

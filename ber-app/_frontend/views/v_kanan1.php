@@ -1,38 +1,64 @@
 <div class="sidebars">
 	<div class="sidebar">
+
+		<!-- MULAI PENCARIAN -->
 		<div class="widget widget_search">
 			<form class="search-form">
 				<input type="search" class="search-field" placeholder="Search …">
 				<input type="submit" class="search-submit">
 			</form>
-		</div><!-- /.widget .widget_search -->
+		</div>
+		<!-- SELESAI PENCARIAN -->
+
+		<!-- MULAI PROFIL --->
 		<div class="widget widget_recent_entries">
-			<h3 class="widget-title"><span>R</span>ecent News</h3>
+			<h3 class="widget-title"><span>P</span>rofil Instansi</h3>
 			<ul>
-				<li>
-					<a href="blog-single.html">3 Reasons Your Business Needs A Budget Now</a>
-					<span class="post-date">January 26, 2016</span>
-				</li>
-				<li>
-					<a href="#">2016 Queensland Small Business Week</a>
-					<span class="post-date">January 26, 2016</span>
-				</li>
-				<li>
-					<a href="blog-single.html">The Tax Office doesn’t always get it right</a>
-					<span class="post-date">January 26, 2016</span>
-				</li>
-				<li>
-					<a href="blog-single.html">The fastest way to grow your business</a>
-					<span class="post-date">January 26, 2016</span>
-				</li>
+				<?php
+				$menu = $this->M_data->ambilsubmenu(2, 3);
+				foreach ($menu->result() as $row) {
+					?>
+					<li>
+						<a href="<?php echo base_url();
+										echo $row->link_submenu; ?>"><?php echo $row->nama_submenu; ?> </a>
+					</li>
+				<?php } ?>
 			</ul>
-		</div><!-- /.widget .widget_recent_entries -->
+		</div>
+		<!-- SELESAI PROFIL -->
+
+		<!-- MULAI POLLING -->
+		<div class="widget widget_recent_entries">
+			<h3 class="widget-title"><span>B</span>erita Terpopuler</h3>
+			<ul>
+				<?php
+				$beritaterbaru = $this->M_data->beritaterbaru(5);
+				foreach ($beritaterbaru->result() as $row) {
+					$judul = seo_link($row->judul);
+					$photopath = str_replace('-', '/', $row->tanggal_modif);
+					?>
+					<li>
+						<a href="<?php echo base_url(); ?>berita/detail/<?php echo $row->id_berita . "/" . $judul . "/"; ?>"><?php echo $row->judul; ?></a>
+						<span class="post-date">
+							<?php
+								$tanggal = $row->tanggal;
+								echo tgl_indo($tanggal);
+								?></span>
+					</li>
+				<?php } ?>
+			</ul>
+		</div>
+		<!-- SELESAI POLLING -->
+
+		<!-- MULAI MODUL IKLAN -->
 		<div class="widget widget_text">
 			<div class="textwidget">
-				<h4>Fusion a model Business wp theme</h4>
-				<p>Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-				<a href="#" class="button white">Purchase Now</a>
+				<h4>Judul Iklan</h4>
+				<p>Test Iklan</p>
+				<a href="#" class="button white">Tombol Klik Iklan</a>
 			</div>
-		</div><!-- /.widget .widget_text -->
+		</div>
+		<!-- SELESAI MODUL IKLAN -->
+
 	</div><!-- /.sidebar -->
 </div><!-- /.sidebars -->
