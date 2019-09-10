@@ -2,26 +2,6 @@
 
 		
 
-		
-
-		<div class="col-xs-6 col-sm-3 col-md-6 quick-link visiting-d-c">
-
-			<a href="">
-
-				<span class="icon"></span>
-
-				<span class="title">Aplikasi Pendataan Aset Desa</span>
-
-			</a>
-
-		</div>
-
-	
-
-		
-
-		
-
 		<div class="col-xs-6 col-sm-3 col-md-6 quick-link internships">
 
 			<a href="">
