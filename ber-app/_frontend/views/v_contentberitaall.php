@@ -4,14 +4,13 @@
         		<div class="container">
         			<div class="row">
         				<div class="page-title">
-							<h2 class="title">Welcome to my blog</h2>
+							<h2 class="title"><?php echo $judulan; ?></h2>
         				</div>
         				<div id="page-breadcrumbs">
         					<nav class="breadcrumb-trail breadcrumbs">
-        						<h2 class="trail-browse">You are here:</h2>
         						<ul class="trail-items">
-        							<li class="trail-item trail-begin"><a href="#">Home</a></li>
-        							<li class="trail-item trail-end">Welcome to my blog</li>
+        							<li class="trail-item trail-begin"><a href="/">Home</a></li>
+        							<li class="trail-item trail-end"><a href="/berita">Berita</a></li>
         						</ul>
         					</nav>
         				</div>
@@ -50,7 +49,7 @@ foreach($artikel as $key => $row){
         										<img src="<?php echo $gambar; ?>" alt="images" style="height: 394.3px; width: 525.75px;">
         								</div><!-- /.entry-cover -->
         								<div class="entry-header">
-        									<span class="entry-time">January 26, 2016</span>
+        									<span class="entry-time"><?php echo nama_hari($row['tanggal']).', ';?> <?php   echo tgl_indo($row['tanggal']); ?></span>
         									<h2 class="entry-title">
 												<a href="<?php echo base_url(); ?>berita/detail/<?php echo $row['id_berita']."/".$judul."/";?>"><?php echo $row['judul']; ?></a>
 											</h2>

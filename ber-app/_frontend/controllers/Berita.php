@@ -49,7 +49,7 @@ class Berita extends CI_Controller
 		else
 			$offset = $this->uri->segment(3);
 		$data['artikel'] = $this->M_data->allberita($config['per_page'], $offset);
-		$data['postingby'] = "Bagian Hukum Kab. Tanjung Jabung Timur";
+		$data['postingby'] = "Dukcapil Kab. Tanjung Jabung Timur";
 		$data['judulapp'] = "Semua Berita " . $this->M_data->titlesistem(1);
 		$data['keyword'] = $this->M_data->keyword(1);
 		$data['deskripsi'] = $this->M_data->deskripsi(1);
