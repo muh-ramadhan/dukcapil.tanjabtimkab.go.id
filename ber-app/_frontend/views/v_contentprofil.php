@@ -61,6 +61,7 @@
                 </div><!-- /.container -->
             </div><!-- /.page-body -->
         </div><!-- /#site-content -->
+        <br>
     <?php
             $id = $row->id_halamanprofil;
             $ip_addr = $this->input->ip_address();
