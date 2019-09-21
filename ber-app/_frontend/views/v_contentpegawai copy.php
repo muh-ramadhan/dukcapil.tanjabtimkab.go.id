@@ -122,9 +122,7 @@
 								</tr>
 							</tbody>
 						</table>
-					<?php
-							}
-							?>
+					<?php } ?>
 					<div class="clearfix"></div>
 					<center>
 						<div class="pagination">
