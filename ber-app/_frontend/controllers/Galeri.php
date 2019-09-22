@@ -11,6 +11,7 @@ class Galeri extends CI_Controller
 		$this->load->helper('tgl_indonesia');
 		$this->load->helper('fungsi_seo');
 	}
+
 	public function index()
 	{
 		$query = $this->db->query("SELECT COUNT(*) as jml FROM ( SELECT * from gallery group by id_fotoberita) as temp;");
@@ -37,13 +38,15 @@ class Galeri extends CI_Controller
 		$data['keyword'] = "galeri kegiatan, " . $this->M_data->keyword(1);
 		$data['deskripsi'] = "Galeri Kegiatan - " . $this->M_data->titlesistem(1);
 		$data['postingby'] = "Admin Bagian Hukum Kab. Tanjung Jabung Timur";
-		$data['vkanan'] = 'v_kanan2';
+
+		$data['vkanan'] = 'v_kanan1';
 		$data['vheader'] = 'v_header';
 		$data['vfooter'] = 'v_footer';
 		$data['vdata'] = 'v_galeri_album';
 		//$this->load->view("v_datakirikanan",$data);
 		$this->load->view("v_galerifoto", $data);
 	}
+
 	public function detail()
 	{
 		//$data['baca']=$this->M_data->baca($this->uri->segment(3,0));
