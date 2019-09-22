@@ -72,7 +72,7 @@ class Pegawai extends CI_Controller
 		$data['keyword'] = $this->M_data->keyword(1);
 		$data['postingby'] = "Admin Bagian Hukum Kab. Tanjung Jabung Timur";
 
-		$data['vkanan'] = 'v_kanan1';
+		//$data['vkanan'] = 'v_kanan1';
 		$data['vheader'] = 'v_header';
 		$data['vfooter'] = 'v_footer';
 		$data['vdata'] = 'v_contentpegawai';

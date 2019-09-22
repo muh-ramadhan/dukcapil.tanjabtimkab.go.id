@@ -95,66 +95,39 @@
 
 
 <?php } else  if ($this->uri->segment(2, 0) == 'detail') { ?>
-	<!-- JIKA KONDISINYA DETAIL -->
 	<style>
-		#ver-zebra3 {
-			width: 100%;
-			text-align: left;
-			margin-top: 10px;
-			margin-bottom: 10px;
-			border-bottom: 1px solid #ccc;
+		.button2 {
+			background-color: #008CBA;
 		}
 
-		#ver-zebra3 td {
-			padding: 8px;
-			line-height: 160%;
-			color: #161313;
-		}
-
-		#ver-zebra5 {
-			width: 100%;
-			text-align: left;
+		#customers {
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 			border-collapse: collapse;
-			margin-bottom: 10px;
-		}
-
-		#ver-zebra5 td {
-			padding: 5px;
-			border-bottom: 1px solid #1bf216;
-			line-height: 160%;
-			color: #161313;
-		}
-
-		#ver-zebra5 td a {
-			font-weight: bold;
-			color: #000;
-			font-size: 15px;
-		}
-
-		.ver-zebra2 {
 			width: 100%;
-			text-align: left;
-			border-collapse: collapse;
-			margin-top: 10px;
-			margin-bottom: 10px;
 		}
 
-		.oce-first {
-			background: #f0f0f0;
-			border-left: 6px solid #ddd;
-		}
-
-		.ver-zebra2 td {
-			padding: 3px;
+		#customers td,
+		#customers th {
 			border: 1px solid #ddd;
-			line-height: 160%;
-			color: #161313;
+			padding: 8px;
+		}
+
+		#customers tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		#customers tr:hover {
+			background-color: #ddd;
+		}
+
+		#customers th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #696969;
+			color: white;
 		}
 	</style>
-
-
-
-
 	<?php
 		if (count($detail_pegawai)) {
 			foreach ($detail_pegawai as $row) {
@@ -177,119 +150,163 @@
 				}
 
 				?>
-			<div class="content grid_7 allberita marked-category">
-				<div class="single-page">
-					<div class="box-single-content">
-						<div class="breadcrumb">
+			<!-- Site content -->
+			<div id="site-content">
+				<div id="page-header">
+					<div class="container">
+						<div class="row">
+							<div class="page-title">
+								<h2 class="title"><?php echo $judulan; ?></h2>
+							</div>
+							<div id="page-breadcrumbs">
+								<nav class="breadcrumb-trail breadcrumbs">
+									<ul class="trail-items">
+										<li class="trail-item trail-begin"><a href="<?php echo base_url(); ?>">Home</a></li>
+										<li class="trail-item trail-end"><a href="<?php echo base_url(); ?>pegawai">Semua Pegawai</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</div><!-- /#page-header -->
 
-							<a href="<?php echo base_url(); ?>">Beranda </a> | <a href="<?php echo base_url(); ?>pegawai"> Data Pegawai </a> | <?php echo $judulan; ?>
+				<div id="page-body">
+					<div class="flat-row pad-top0px pad-bottom80px">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="flat-tabs">
+										<ul class="menu-tabs">
+											<li class="active"><a href="#"><?php echo $row->nama_pegawai; ?> </a></li>
+										</ul>
+										<div class="content-tab">
+											<div class="content-inner">
+												<table id="customers">
+													<tbody>
+														<tr>
+															<td>
+																Jabatan
+															</td>
+															<td>
+																<?php echo $row->nama_jabatanpegawai; ?>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																NIP
+															</td>
+															<td>
+																<?php echo $row->nip; ?>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																Pangkat/Golongan
+															</td>
+															<td>
+																<?php echo $row->pangkat; ?> - <?php echo $row->gol_ruang; ?>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																Tempat/Tanggal Lahir
+															</td>
+															<td>
+																<?php if ($row->tempat == '') { ?>
+																	-
+																<?php } else {
+																				echo $row->tempat;
+																			}  ?>
+																<?php if ($row->no_tgl_lahir == 'Y') { ?>
+																	, -
+																<?php } else { ?>
+																	, <?php echo tgl_indo($row->tgl_lahir); ?>
+																<?php }  ?>
+															</td>
+														</tr>
 
-						</div>
+														<tr>
+															<td>
+																Jenis Kelamin
+															</td>
+															<td>
+																<?php echo $kelamin; ?>
+															</td>
+														</tr>
 
-						<br>
-						<h3 class="rs single-title"><?php echo $judulan; ?></h3>
+														<tr>
+															<td>
+																Alamat
+															</td>
+															<td>
+																<?php echo $row->alamat; ?>
+															</td>
+														</tr>
+
+														<tr>
+															<td>
+																Pendidikan
+															</td>
+															<td>
+																<?php echo $row->pendidikan; ?>
+															</td>
+														</tr>
+
+														<tr>
+															<td>
+																Tahun Lulus
+															</td>
+															<td>
+																<?php echo $row->tahun_lulus; ?>
+															</td>
+														</tr>
+
+														<tr>
+															<td>
+																Masa Kerja
+															</td>
+															<td>
+																<?php echo $masa_tahun . ' Tahun ' . $masa_bulan . ' Bulan'; ?>
+															</td>
+														</tr>
+
+														<tr>
+															<td>
+																Keterangan
+															</td>
+															<td>
+																<?php echo $row->keterangan; ?>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											<?php
+													}
+													?>
+											</div><!-- /.content-inner -->
+
+										</div><!-- /.content-tab -->
+									</div><!-- /.flat-tabs -->
+								</div><!-- /.col-md-6 -->
+
+								<div class="col-md-6">
+									<?php
+											if ($row->gambar != null) {
+												$photopath = str_replace('-', '/', $row->tgl_modif);
+												?>
+										<img style="width: 570px; height: 380px;" src="<?php echo base_url(); ?>foto_pegawai/<?php echo $photopath; ?>/<?php echo $row->gambar; ?>" alt="images">
+									<?php } else {  ?>
+										<img style="width: 570px; height: 380px;" src="<?php echo base_url(); ?>style/images/profile.jpg" alt="images">
+									<?php } ?>
+								</div><!-- /.col-md-6 -->
+							</div><!-- /.row -->
+						</div><!-- /.container -->
+					</div><!-- /.flat-row -->
+				</div><!-- /.page-body -->
+			</div><!-- /#site-content -->
+		<?php
+			} else { }
+			?>
 
 
-
-
-
-
-
-						<center>
-							<?php
-
-										if ($row->gambar != null) {
-
-											$photopath = str_replace('-', '/', $row->tgl_modif);
-
-											?>
-
-								<img src="<?php echo base_url(); ?>foto_pegawai/<?php echo $photopath; ?>/<?php echo $row->gambar; ?>" style="border:5px solid #000;margin-bottom:20px;width:300px;">
-
-							<?php } else {  ?>
-
-								<img src="<?php echo base_url(); ?>style/images/profile.jpg" style="border:5px solid #000;margin-bottom:20px;width:300px;">
-
-							<?php } ?>
-
-
-
-						</center>
-						<table class="ver-zebra2">
-							<colgroup>
-								<col class="oce-first">
-							</colgroup>
-							<tbody>
-								<tr>
-									<td width="200">Nama Lengkap</td>
-									<td width="500">: <strong> <?php echo $row->nama_pegawai; ?> </strong></td>
-								</tr>
-								<tr>
-									<td width="200">Jabatan</td>
-									<td width="500">: <?php echo $row->nama_jabatanpegawai; ?> </td>
-								</tr>
-								<tr>
-									<td>NIP</td>
-									<td>: <?php echo $row->nip; ?> </td>
-								</tr>
-								<tr>
-									<td>Pangkat/Golongan</td>
-									<td> : <?php echo $row->pangkat; ?> - <?php echo $row->gol_ruang; ?></td>
-								</tr>
-								</tr>
-								<tr>
-									<td>Tempat/Tanggal Lahir</td>
-									<td> :
-										<?php if ($row->tempat == '') { ?>
-											-
-										<?php } else {
-														echo $row->tempat;
-													}  ?>
-										<?php if ($row->no_tgl_lahir == 'Y') { ?>
-											, -
-										<?php } else { ?>
-											, <?php echo tgl_indo($row->tgl_lahir); ?>
-										<?php }  ?>
-									</td>
-								</tr>
-								<tr>
-									<td>Jenis Kelamin</td>
-									<td> : <?php echo $kelamin; ?></td>
-								</tr>
-								<tr>
-									<td>Alamat</td>
-									<td> : <?php echo $row->alamat; ?></td>
-								</tr>
-								<tr>
-									<td>Pendidikan</td>
-									<td>: <?php echo $row->pendidikan; ?></td>
-								</tr>
-
-								<tr>
-									<td>Tahun Lulus</td>
-									<td>: <?php echo $row->tahun_lulus; ?></td>
-								</tr>
-								<tr>
-									<td>Masa Kerja</td>
-									<td> : <?php echo $masa_tahun . ' Tahun ' . $masa_bulan . ' Bulan'; ?></td>
-								</tr>
-								<tr>
-									<td>Keterangan</td>
-									<td> <?php echo $row->keterangan; ?></td>
-								</tr>
-							</tbody>
-						</table>
-
-					<?php
-							}
-							?>
-					<div class="clearfix"></div>
-
-				<?php
-					} else { }
-					?>
-					</div>
-
-				</div>
-			</div>
-		<?php } ?>
+	<?php } ?>
