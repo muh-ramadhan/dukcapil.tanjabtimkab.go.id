@@ -39,12 +39,12 @@ class Galeri extends CI_Controller
 		$data['deskripsi'] = "Galeri Kegiatan - " . $this->M_data->titlesistem(1);
 		$data['postingby'] = "Admin Bagian Hukum Kab. Tanjung Jabung Timur";
 
-		$data['vkanan'] = 'v_kanan1';
+		//$data['vkanan'] = 'v_kanan1';
 		$data['vheader'] = 'v_header';
 		$data['vfooter'] = 'v_footer';
 		$data['vdata'] = 'v_galeri_album';
-		//$this->load->view("v_datakirikanan",$data);
-		$this->load->view("v_galerifoto", $data);
+		$this->load->view("v_datakirikanan",$data);
+		//$this->load->view("v_galerifoto", $data);
 	}
 
 	public function detail()
@@ -57,11 +57,11 @@ class Galeri extends CI_Controller
 		$data['keterangan'] = $this->M_data->ketfotoberita($this->uri->segment(3, 0));
 		$data['detail_album'] = $this->M_data->getidgaleri($this->uri->segment(3, 0));
 		$data['postingby'] = "Admin Bagian Hukum Kab. Tanjung Jabung Timur";
-		$data['vkanan'] = 'v_kanan2';
+		//$data['vkanan'] = 'v_kanan2';
 		$data['vheader'] = 'v_header';
 		$data['vfooter'] = 'v_footer';
 		$data['vdata'] = 'v_galeri_detail';
-		//$this->load->view("v_datakirikanan",$data);
-		$this->load->view("v_galerifoto", $data);
+		$this->load->view("v_datakirikanan",$data);
+		//$this->load->view("v_galerifoto", $data);
 	}
 }
