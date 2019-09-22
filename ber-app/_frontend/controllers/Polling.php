@@ -11,6 +11,7 @@ class Polling extends CI_Controller
 		$this->load->helper('tgl_indonesia');
 		$this->load->helper('fungsi_seo');
 	}
+	
 	public function index()
 	{
 		$query = $this->db->query("select id_polling,pertanyaan from polling where aktif='Y' order by id_polling desc limit 1");
