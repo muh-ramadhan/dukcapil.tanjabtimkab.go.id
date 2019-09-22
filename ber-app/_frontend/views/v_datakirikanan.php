@@ -123,6 +123,7 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>style/js/jquery.fancybox.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>style/js/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>style/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>style/js/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>style/js/gmap3.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>style/js/jquery-validate.js"></script>

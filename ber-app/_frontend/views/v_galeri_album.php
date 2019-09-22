@@ -10,7 +10,7 @@
         					<nav class="breadcrumb-trail breadcrumbs">
         						<ul class="trail-items">
         							<li class="trail-item trail-begin"><a href="<?php echo base_url(); ?>">Home</a></li>
-        							<li class="trail-item trail-end"><a href="<?php echo base_url(); ?>galeri">Home</a></li>
+        							<li class="trail-item trail-end"><a href="<?php echo base_url(); ?>galeri">Galeri</a></li>
         						</ul>
         					</nav>
         				</div>
