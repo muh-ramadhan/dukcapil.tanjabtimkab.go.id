@@ -42,9 +42,9 @@
                        </div><!-- /.entry-cover -->
                        <div class="entry-header">
                          <span class="entry-time" style="background-color: #0263d4;"><?php $tanggal = $row->tanggal;
-                                                        echo nama_hari($tanggal) . ', ';
-                                                        echo tgl_indo($tanggal) . ' | ';
-                                                        echo $row->jam . ' WIB '; ?></span>
+                                                                                            echo nama_hari($tanggal) . ', ';
+                                                                                            echo tgl_indo($tanggal) . ' | ';
+                                                                                            echo $row->jam . ' WIB '; ?></span>
                          <h2 class="entry-title"><?php echo $row->judul; ?></h2>
                          <div class="entry-meta">
                            <span class="entry-categorues"><a href="<?php echo base_url(); ?>kategori/<?php echo $row->kategori_seo; ?>"><?php echo $row->nama_kategori; ?></a></span>
@@ -77,7 +77,6 @@
    <?php } ?>
 
  <?php } else if ($this->uri->segment(1, 0) == 'kategori') { ?>
-   <!-- Site content -->
    <div id="site-content">
      <div id="page-header">
        <div class="container">
@@ -144,18 +143,19 @@
                    </article><!-- /.post -->
                  <?php $no = $no + 1;
                       } ?>
-               
-               <!-- MULAI NAVIGASI -->
-               <?php echo $pagination; ?>
-               <!-- SELESAI NAVIGASI -->
+
+                 <!-- MULAI NAVIGASI -->
+                 <?php echo $pagination; ?>
+                 <!-- SELESAI NAVIGASI -->
              </div><!-- /.main-content -->
+
              <!-- MULAI SIDEBAR -->
              <?php $this->load->view($vkanan); ?>
              <!-- SELESAI SIDEBAR -->
-             <?php } else { ?>
-                 <h4>Maaf, Data Belum Tersedia !</h4><br><br><br>
-               <?php } ?>
+           <?php } else { ?>
+             <h4>Maaf, Data Belum Tersedia !</h4><br><br><br>
            <?php } ?>
+         <?php } ?>
            </div><!-- /.blog -->
          </div><!-- /.row -->
        </div><!-- /.container -->
